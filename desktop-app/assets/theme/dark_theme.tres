@@ -1,0 +1,56 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://dkj7k0poe7e01"]
+
+[ext_resource type="FontFile" uid="uid://dgrr5r2khrknk" path="res://assets/fonts/Poppins/Poppins-Regular.ttf" id="1_p1esy"]
+[ext_resource type="StyleBox" uid="uid://b7l5yim3ois4h" path="res://assets/theme/StyleBox/GradientGray.tres" id="1_xniam"]
+[ext_resource type="FontFile" uid="uid://dplf8yv3b52ft" path="res://assets/fonts/Poppins/Poppins-Bold.ttf" id="1_ygyi4"]
+[ext_resource type="FontFile" uid="uid://cgsrn6iluwd4" path="res://assets/fonts/Poppins/Poppins-Italic.ttf" id="2_hi3dt"]
+[ext_resource type="StyleBox" uid="uid://big45rb2if1ur" path="res://assets/theme/StyleBox/FlatGray.tres" id="7_hi3dt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0snvo"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qw6a2"]
+
+[resource]
+default_font = ExtResource("1_p1esy")
+default_font_size = 12
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/fonts/body_bold = ExtResource("1_ygyi4")
+Label/fonts/body_italic = ExtResource("2_hi3dt")
+Label/fonts/body_regular = ExtResource("1_p1esy")
+Label/fonts/font = ExtResource("1_p1esy")
+Label/fonts/title_bold = ExtResource("1_p1esy")
+Label/fonts/title_regular = ExtResource("1_p1esy")
+Label/styles/focus = SubResource("StyleBoxFlat_0snvo")
+Label/styles/normal = SubResource("StyleBoxEmpty_qw6a2")
+MarginContainer/constants/margin_bottom = 10
+MarginContainer/constants/margin_left = 10
+MarginContainer/constants/margin_right = 10
+MarginContainer/constants/margin_top = 10
+Panel/styles/panel = ExtResource("1_xniam")
+PanelContainer/styles/panel = ExtResource("7_hi3dt")
