@@ -1,0 +1,153 @@
+[gd_scene load_steps=8 format=3 uid="uid://3u6u1f5gdbws"]
+
+[ext_resource type="Theme" uid="uid://dkj7k0poe7e01" path="res://assets/theme/dark_theme.tres" id="1_3tiwv"]
+[ext_resource type="Script" uid="uid://wug645cmy301" path="res://scenes/main_menu/main_menu.gd" id="2_3ovsr"]
+[ext_resource type="Texture2D" uid="uid://cy3ehitn1r7k2" path="res://assets/brand/textures/STATTUS Escuro.png" id="2_422ur"]
+[ext_resource type="Texture2D" uid="uid://cq740g0c1v8e2" path="res://assets/icons/feather_white/tag.svg" id="4_4v3x4"]
+[ext_resource type="FontFile" uid="uid://dow7spsfua5k8" path="res://assets/fonts/Poppins/Poppins-SemiBold.ttf" id="5_8jdwr"]
+[ext_resource type="Texture2D" uid="uid://osgjkmakl5sv" path="res://assets/icons/feather_white/x.svg" id="6_rtw2f"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4v3x4"]
+font = ExtResource("5_8jdwr")
+font_size = 18
+font_color = Color(0.7529412, 0.85882354, 0.7607843, 1)
+shadow_size = 5
+shadow_color = Color(0.7490196, 0.85490197, 0.75686276, 0.07450981)
+shadow_offset = Vector2(1, 2)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_3tiwv")
+script = ExtResource("2_3ovsr")
+
+[node name="BGLayer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="BGLayer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.20392157, 0.22352941, 0.2, 1)
+
+[node name="UILayer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="MainMenuMarginContainer" type="MarginContainer" parent="UILayer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -13.0
+offset_right = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/MainMenuMarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="UILayer/MainMenuMarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_422ur")
+expand_mode = 2
+stretch_mode = 3
+
+[node name="Panel" type="PanelContainer" parent="UILayer/MainMenuMarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ButtonList" type="HBoxContainer" parent="UILayer/MainMenuMarginContainer/VBoxContainer/Panel"]
+layout_mode = 2
+
+[node name="Products" type="Button" parent="UILayer/MainMenuMarginContainer/VBoxContainer/Panel/ButtonList"]
+custom_minimum_size = Vector2(180, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "
+"
+
+[node name="Icon" type="TextureRect" parent="UILayer/MainMenuMarginContainer/VBoxContainer/Panel/ButtonList/Products"]
+modulate = Color(0.7529412, 0.85882354, 0.7607843, 1)
+layout_mode = 0
+offset_right = 60.0
+offset_bottom = 60.0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_4v3x4")
+expand_mode = 3
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="UILayer/MainMenuMarginContainer/VBoxContainer/Panel/ButtonList/Products"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Produtos"
+label_settings = SubResource("LabelSettings_4v3x4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Exit" type="Button" parent="UILayer/MainMenuMarginContainer/VBoxContainer/Panel/ButtonList"]
+custom_minimum_size = Vector2(180, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "
+"
+
+[node name="Icon" type="TextureRect" parent="UILayer/MainMenuMarginContainer/VBoxContainer/Panel/ButtonList/Exit"]
+modulate = Color(0.7529412, 0.85882354, 0.7607843, 1)
+layout_mode = 0
+offset_right = 60.0
+offset_bottom = 60.0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("6_rtw2f")
+expand_mode = 3
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="UILayer/MainMenuMarginContainer/VBoxContainer/Panel/ButtonList/Exit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Sair"
+label_settings = SubResource("LabelSettings_4v3x4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="UILayer/MainMenuMarginContainer/VBoxContainer/Panel/ButtonList/Products" to="." method="_on_products_pressed"]
+[connection signal="pressed" from="UILayer/MainMenuMarginContainer/VBoxContainer/Panel/ButtonList/Exit" to="." method="_on_exit_pressed"]

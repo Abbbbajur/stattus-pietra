@@ -1,10 +1,14 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://dkj7k0poe7e01"]
+[gd_resource type="Theme" load_steps=14 format=3 uid="uid://dkj7k0poe7e01"]
 
 [ext_resource type="FontFile" uid="uid://dgrr5r2khrknk" path="res://assets/fonts/Poppins/Poppins-Regular.ttf" id="1_p1esy"]
-[ext_resource type="StyleBox" uid="uid://b7l5yim3ois4h" path="res://assets/theme/StyleBox/GradientGray.tres" id="1_xniam"]
 [ext_resource type="FontFile" uid="uid://dplf8yv3b52ft" path="res://assets/fonts/Poppins/Poppins-Bold.ttf" id="1_ygyi4"]
 [ext_resource type="FontFile" uid="uid://cgsrn6iluwd4" path="res://assets/fonts/Poppins/Poppins-Italic.ttf" id="2_hi3dt"]
+[ext_resource type="StyleBox" uid="uid://b7l5yim3ois4h" path="res://assets/theme/StyleBox/GradientGray.tres" id="5_7u566"]
+[ext_resource type="FontFile" uid="uid://cqhrjvdqdxc6w" path="res://assets/fonts/Poppins/Poppins-Light.ttf" id="6_x7h50"]
 [ext_resource type="StyleBox" uid="uid://big45rb2if1ur" path="res://assets/theme/StyleBox/FlatGray.tres" id="7_hi3dt"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_7u566"]
+color = Color(0, 0, 0, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0snvo"]
 content_margin_left = 4.0
@@ -29,9 +33,44 @@ expand_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qw6a2"]
 
+[sub_resource type="Gradient" id="Gradient_25nw1"]
+interpolation_mode = 2
+colors = PackedColorArray(0.16145879, 0.19563663, 0.1565741, 1, 0.2627451, 0.30588236, 0.25882354, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_r7lly"]
+gradient = SubResource("Gradient_25nw1")
+fill = 1
+fill_from = Vector2(0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dqx04"]
+texture = SubResource("GradientTexture2D_r7lly")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3fs13"]
+bg_color = Color(0.15686275, 0.15686275, 0.15686275, 0.7058824)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+shadow_color = Color(0, 0, 0, 0.39215687)
+shadow_offset = Vector2(0, 6)
+anti_aliasing = false
+
 [resource]
 default_font = ExtResource("1_p1esy")
 default_font_size = 12
+HSeparator/constants/separation = 10
+HSeparator/styles/separator = SubResource("StyleBoxLine_7u566")
 Label/colors/font_color = Color(1, 1, 1, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/colors/font_shadow_color = Color(0, 0, 0, 0)
@@ -48,9 +87,38 @@ Label/fonts/title_bold = ExtResource("1_p1esy")
 Label/fonts/title_regular = ExtResource("1_p1esy")
 Label/styles/focus = SubResource("StyleBoxFlat_0snvo")
 Label/styles/normal = SubResource("StyleBoxEmpty_qw6a2")
+LineEdit/font_sizes/font_size = 14
 MarginContainer/constants/margin_bottom = 10
 MarginContainer/constants/margin_left = 10
 MarginContainer/constants/margin_right = 10
 MarginContainer/constants/margin_top = 10
-Panel/styles/panel = ExtResource("1_xniam")
-PanelContainer/styles/panel = ExtResource("7_hi3dt")
+Panel/styles/panel = ExtResource("7_hi3dt")
+PanelContainer/styles/panel = ExtResource("5_7u566")
+TabContainer/colors/drop_mark_color = Color(0, 0, 0, 1)
+TabContainer/colors/font_disabled_color = Color(0, 0, 0, 1)
+TabContainer/colors/font_hovered_color = Color(0, 0, 0, 1)
+TabContainer/colors/font_outline_color = Color(0, 0, 0, 1)
+TabContainer/colors/font_selected_color = Color(1, 1, 1, 1)
+TabContainer/colors/font_unselected_color = Color(0.4942233, 0.4942233, 0.49422324, 1)
+TabContainer/constants/icon_max_width = 0
+TabContainer/constants/icon_separation = 0
+TabContainer/constants/outline_size = 0
+TabContainer/constants/side_margin = 0
+TabContainer/font_sizes/font_size = 16
+TabContainer/fonts/font = ExtResource("6_x7h50")
+TabContainer/icons/decrement = null
+TabContainer/icons/decrement_highlight = null
+TabContainer/icons/drop_mark = null
+TabContainer/icons/increment = null
+TabContainer/icons/increment_highlight = null
+TabContainer/icons/menu = null
+TabContainer/icons/menu_highlight = null
+TabContainer/styles/panel = ExtResource("7_hi3dt")
+TabContainer/styles/tab_disabled = null
+TabContainer/styles/tab_focus = null
+TabContainer/styles/tab_hovered = null
+TabContainer/styles/tab_selected = SubResource("StyleBoxTexture_dqx04")
+TabContainer/styles/tab_unselected = null
+TabContainer/styles/tabbar_background = SubResource("StyleBoxFlat_3fs13")
+VSeparator/constants/separation = 10
+VSeparator/styles/separator = SubResource("StyleBoxLine_7u566")

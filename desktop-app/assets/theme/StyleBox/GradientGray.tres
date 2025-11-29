@@ -2,7 +2,7 @@
 
 [sub_resource type="Gradient" id="Gradient_25nw1"]
 interpolation_mode = 2
-colors = PackedColorArray(0, 0, 0, 0.7058824, 0.23529412, 0.23529412, 0.23529412, 0.7058824)
+colors = PackedColorArray(0.16145879, 0.19563663, 0.1565741, 1, 0.2627451, 0.30588236, 0.25882354, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_r7lly"]
 gradient = SubResource("Gradient_25nw1")
@@ -15,7 +15,3 @@ texture_margin_left = 5.0
 texture_margin_top = 5.0
 texture_margin_right = 5.0
 texture_margin_bottom = 5.0
-expand_margin_left = 5.0
-expand_margin_top = 5.0
-expand_margin_right = 5.0
-expand_margin_bottom = 5.0

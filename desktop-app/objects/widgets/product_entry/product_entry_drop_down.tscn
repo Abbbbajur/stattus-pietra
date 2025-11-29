@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3 uid="uid://bmrkbrajl2v65"]
+
+[ext_resource type="Script" uid="uid://dsxe1nk1xr3km" path="res://objects/widgets/product_entry/product_entry_drop_down.gd" id="1_ubecq"]
+[ext_resource type="StyleBox" uid="uid://b7l5yim3ois4h" path="res://assets/theme/StyleBox/GradientGray.tres" id="1_v7680"]
+[ext_resource type="FontFile" uid="uid://dhrpsw2sxvt54" path="res://assets/fonts/GlacialIndifference/GlacialIndifference-Bold.otf" id="1_xiv6x"]
+[ext_resource type="Texture2D" uid="uid://15aex32a8mn4" path="res://assets/icons/feather_white/copy.svg" id="2_xiv6x"]
+[ext_resource type="Texture2D" uid="uid://07evqdosujmf" path="res://assets/icons/feather_white/archive.svg" id="3_ubecq"]
+[ext_resource type="Texture2D" uid="uid://csgrjhb807r3l" path="res://assets/icons/feather_white/trash.svg" id="4_v7680"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ubecq"]
+font = ExtResource("1_xiv6x")
+
+[node name="ProductEntryDropDown" type="PopupPanel"]
+disable_3d = true
+oversampling_override = 1.0
+title = "ProductEntryDropDown"
+size = Vector2i(150, 100)
+visible = true
+always_on_top = true
+content_scale_mode = 2
+content_scale_aspect = 1
+theme_override_styles/panel = ExtResource("1_v7680")
+script = ExtResource("1_ubecq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 145.0
+offset_bottom = 95.0
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Ações"
+label_settings = SubResource("LabelSettings_ubecq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Copiar" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Duplicar"
+icon = ExtResource("2_xiv6x")
+flat = true
+expand_icon = true
+
+[node name="Arquivar" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Arquivar"
+icon = ExtResource("3_ubecq")
+flat = true
+expand_icon = true
+
+[node name="Excluir" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Excluir"
+icon = ExtResource("4_v7680")
+flat = true
+expand_icon = true
+
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
+[connection signal="pressed" from="VBoxContainer/Copiar" to="." method="_on_copiar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Arquivar" to="." method="_on_arquivar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Excluir" to="." method="_on_excluir_pressed"]

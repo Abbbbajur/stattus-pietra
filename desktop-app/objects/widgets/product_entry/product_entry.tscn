@@ -1,0 +1,100 @@
+[gd_scene load_steps=12 format=3 uid="uid://bamhd45a2cc8s"]
+
+[ext_resource type="Texture2D" uid="uid://bnb6vysnbmrx4" path="res://assets/icons/feather_white/hexagon.svg" id="1_0njnd"]
+[ext_resource type="Script" uid="uid://bs0kcrj4micwh" path="res://objects/widgets/product_entry/product_entry.gd" id="1_62apb"]
+[ext_resource type="PackedScene" uid="uid://bmrkbrajl2v65" path="res://objects/widgets/product_entry/product_entry_drop_down.tscn" id="2_l7s5g"]
+[ext_resource type="FontFile" uid="uid://c6tj3eanoimrj" path="res://assets/fonts/GlacialIndifference/GlacialIndifference-Regular.otf" id="2_wobld"]
+[ext_resource type="Texture2D" uid="uid://bypyeavo4xawl" path="res://assets/icons/feather_white/edit.svg" id="3_l7s5g"]
+[ext_resource type="Texture2D" uid="uid://bhwhelqkkgseg" path="res://assets/icons/feather_white/menu.svg" id="4_sfv0i"]
+
+[sub_resource type="Gradient" id="Gradient_25nw1"]
+interpolation_mode = 2
+colors = PackedColorArray(0.16383225, 0.19435415, 0.16106632, 1, 0.2627451, 0.30588236, 0.25882354, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_r7lly"]
+gradient = SubResource("Gradient_25nw1")
+fill_from = Vector2(0.5, 1)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kxfrq"]
+texture = SubResource("GradientTexture2D_r7lly")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_awg16"]
+font = ExtResource("2_wobld")
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_8qg7l"]
+color = Color(0, 0, 0, 0)
+thickness = 3
+vertical = true
+
+[node name="ProductEntry" type="Panel"]
+custom_minimum_size = Vector2(0, 40)
+theme_override_styles/panel = SubResource("StyleBoxTexture_kxfrq")
+script = ExtResource("1_62apb")
+dropdown_menu = ExtResource("2_l7s5g")
+
+[node name="Details" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VS3" type="VSeparator" parent="Details"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Details"]
+layout_mode = 2
+texture = ExtResource("1_0njnd")
+stretch_mode = 3
+
+[node name="VS2" type="VSeparator" parent="Details"]
+layout_mode = 2
+
+[node name="Code" type="Label" parent="Details"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "000000"
+label_settings = SubResource("LabelSettings_awg16")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VS1" type="VSeparator" parent="Details"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/separator = SubResource("StyleBoxLine_8qg7l")
+
+[node name="ProductName" type="Label" parent="Details"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Product Name"
+label_settings = SubResource("LabelSettings_awg16")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Actions" type="HBoxContainer" parent="Details"]
+layout_mode = 2
+size_flags_horizontal = 8
+alignment = 2
+
+[node name="Edit" type="Button" parent="Details/Actions"]
+layout_mode = 2
+icon = ExtResource("3_l7s5g")
+flat = true
+
+[node name="More" type="Button" parent="Details/Actions"]
+layout_mode = 2
+icon = ExtResource("4_sfv0i")
+flat = true
+
+[node name="VS4" type="VSeparator" parent="Details"]
+layout_mode = 2
+
+[connection signal="pressed" from="Details/Actions/More" to="." method="_on_more_pressed"]
