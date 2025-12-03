@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=14 format=3 uid="uid://dkj7k0poe7e01"]
+[gd_resource type="Theme" load_steps=15 format=3 uid="uid://dkj7k0poe7e01"]
 
 [ext_resource type="FontFile" uid="uid://dgrr5r2khrknk" path="res://assets/fonts/Poppins/Poppins-Regular.ttf" id="1_p1esy"]
 [ext_resource type="FontFile" uid="uid://dplf8yv3b52ft" path="res://assets/fonts/Poppins/Poppins-Bold.ttf" id="1_ygyi4"]
@@ -33,6 +33,10 @@ expand_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qw6a2"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x7h50"]
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0.6156863)
+expand_margin_bottom = 5.0
+
 [sub_resource type="Gradient" id="Gradient_25nw1"]
 interpolation_mode = 2
 colors = PackedColorArray(0.16145879, 0.19563663, 0.1565741, 1, 0.2627451, 0.30588236, 0.25882354, 1)
@@ -48,20 +52,13 @@ texture_margin_left = 5.0
 texture_margin_top = 5.0
 texture_margin_right = 5.0
 texture_margin_bottom = 5.0
-expand_margin_left = 5.0
 expand_margin_top = 5.0
-expand_margin_right = 5.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3fs13"]
-bg_color = Color(0.15686275, 0.15686275, 0.15686275, 0.7058824)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0.30588236)
 border_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
+corner_radius_top_left = 5
+corner_radius_top_right = 5
 shadow_color = Color(0, 0, 0, 0.39215687)
 shadow_offset = Vector2(0, 6)
 anti_aliasing = false
@@ -103,7 +100,7 @@ TabContainer/colors/font_unselected_color = Color(0.4942233, 0.4942233, 0.494223
 TabContainer/constants/icon_max_width = 0
 TabContainer/constants/icon_separation = 0
 TabContainer/constants/outline_size = 0
-TabContainer/constants/side_margin = 0
+TabContainer/constants/side_margin = 10
 TabContainer/font_sizes/font_size = 16
 TabContainer/fonts/font = ExtResource("6_x7h50")
 TabContainer/icons/decrement = null
@@ -113,7 +110,7 @@ TabContainer/icons/increment = null
 TabContainer/icons/increment_highlight = null
 TabContainer/icons/menu = null
 TabContainer/icons/menu_highlight = null
-TabContainer/styles/panel = ExtResource("7_hi3dt")
+TabContainer/styles/panel = SubResource("StyleBoxFlat_x7h50")
 TabContainer/styles/tab_disabled = null
 TabContainer/styles/tab_focus = null
 TabContainer/styles/tab_hovered = null

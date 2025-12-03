@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://3u6u1f5gdbws"]
+[gd_scene load_steps=9 format=3 uid="uid://3u6u1f5gdbws"]
 
 [ext_resource type="Theme" uid="uid://dkj7k0poe7e01" path="res://assets/theme/dark_theme.tres" id="1_3tiwv"]
 [ext_resource type="Script" uid="uid://wug645cmy301" path="res://scenes/main_menu/main_menu.gd" id="2_3ovsr"]
 [ext_resource type="Texture2D" uid="uid://cy3ehitn1r7k2" path="res://assets/brand/textures/STATTUS Escuro.png" id="2_422ur"]
 [ext_resource type="Texture2D" uid="uid://cq740g0c1v8e2" path="res://assets/icons/feather_white/tag.svg" id="4_4v3x4"]
 [ext_resource type="FontFile" uid="uid://dow7spsfua5k8" path="res://assets/fonts/Poppins/Poppins-SemiBold.ttf" id="5_8jdwr"]
+[ext_resource type="Texture2D" uid="uid://ce1k6dmkmpuk3" path="res://assets/icons/feather_white/package.svg" id="6_5seab"]
 [ext_resource type="Texture2D" uid="uid://osgjkmakl5sv" path="res://assets/icons/feather_white/x.svg" id="6_rtw2f"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4v3x4"]
@@ -117,6 +118,36 @@ label_settings = SubResource("LabelSettings_4v3x4")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Orders" type="Button" parent="UILayer/MainMenuMarginContainer/VBoxContainer/Panel/ButtonList"]
+custom_minimum_size = Vector2(180, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Icon" type="TextureRect" parent="UILayer/MainMenuMarginContainer/VBoxContainer/Panel/ButtonList/Orders"]
+modulate = Color(0.7529412, 0.85882354, 0.7607843, 1)
+layout_mode = 0
+offset_right = 60.0
+offset_bottom = 60.0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("6_5seab")
+expand_mode = 3
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="UILayer/MainMenuMarginContainer/VBoxContainer/Panel/ButtonList/Orders"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Pedidos"
+label_settings = SubResource("LabelSettings_4v3x4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Exit" type="Button" parent="UILayer/MainMenuMarginContainer/VBoxContainer/Panel/ButtonList"]
 custom_minimum_size = Vector2(180, 60)
 layout_mode = 2
@@ -150,4 +181,5 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="pressed" from="UILayer/MainMenuMarginContainer/VBoxContainer/Panel/ButtonList/Products" to="." method="_on_products_pressed"]
+[connection signal="pressed" from="UILayer/MainMenuMarginContainer/VBoxContainer/Panel/ButtonList/Orders" to="." method="_on_orders_pressed"]
 [connection signal="pressed" from="UILayer/MainMenuMarginContainer/VBoxContainer/Panel/ButtonList/Exit" to="." method="_on_exit_pressed"]

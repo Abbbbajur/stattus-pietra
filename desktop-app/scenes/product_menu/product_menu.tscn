@@ -270,13 +270,17 @@ text = "Unidade de Medida"
 
 [node name="Medida" type="OptionButton" parent="UILayer/ProductEditContainer/TabContainer/000000 | Product Name/VBox/ScrollContainer/VBoxContainer/InfoBasicas/VBox/HBox"]
 layout_mode = 2
-item_count = 3
-popup/item_0/text = "Kg"
+item_count = 5
+popup/item_0/text = "Quilogramas"
 popup/item_0/id = 0
-popup/item_1/text = "L"
-popup/item_1/id = 1
-popup/item_2/text = "m²"
-popup/item_2/id = 2
+popup/item_1/text = "Gramas"
+popup/item_1/id = 3
+popup/item_2/text = "Litros"
+popup/item_2/id = 1
+popup/item_3/text = "Mililitros"
+popup/item_3/id = 4
+popup/item_4/text = "M²"
+popup/item_4/id = 2
 
 [node name="VS2" type="VSeparator" parent="UILayer/ProductEditContainer/TabContainer/000000 | Product Name/VBox/ScrollContainer/VBoxContainer/InfoBasicas/VBox/HBox"]
 layout_mode = 2
