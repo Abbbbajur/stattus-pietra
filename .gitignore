@@ -1,6 +1,8 @@
 # Godot 4+ specific ignores
 .godot/
 .nomedia
+.builds/
+export_presets.cfg
 
 # Godot-specific ignores
 .import/
@@ -14,3 +16,4 @@ export_credentials.cfg
 .mono/
 data_*/
 mono_crash.*.json
+
