@@ -9,6 +9,7 @@
 [ext_resource type="FontFile" uid="uid://c6tj3eanoimrj" path="res://assets/fonts/GlacialIndifference/GlacialIndifference-Regular.otf" id="6_ea12n"]
 [ext_resource type="PackedScene" uid="uid://ve73vtd268ej" path="res://objects/widgets/order_item_entry/order_item_entry.tscn" id="7_tcsiw"]
 [ext_resource type="Texture2D" uid="uid://48pf3vyc5at4" path="res://assets/icons/feather_white/plus.svg" id="7_xisy5"]
+[ext_resource type="StyleBox" uid="uid://dn3tb00831a12" path="res://assets/theme/StyleBox/dark_transparent.tres" id="8_ptbg6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_kxfrq"]
 font = ExtResource("5_igiaf")
@@ -23,9 +24,6 @@ font_size = 14
 
 [sub_resource type="LabelSettings" id="LabelSettings_1648y"]
 font_size = 14
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tcsiw"]
-bg_color = Color(0, 0, 0, 0.22745098)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1i4pp"]
 bg_color = Color(0, 0, 0, 0.25882354)
@@ -134,12 +132,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="OrderEntry" parent="UILayer/HBoxContainer/ProductListContainer/VBox/List/ScrollContainer/VBoxEntries" instance=ExtResource("5_dwq5n")]
-layout_mode = 2
-
-[node name="OrderEntry2" parent="UILayer/HBoxContainer/ProductListContainer/VBox/List/ScrollContainer/VBoxEntries" instance=ExtResource("5_dwq5n")]
-layout_mode = 2
-
-[node name="OrderEntry3" parent="UILayer/HBoxContainer/ProductListContainer/VBox/List/ScrollContainer/VBoxEntries" instance=ExtResource("5_dwq5n")]
 layout_mode = 2
 
 [node name="ProductEditContainer" type="MarginContainer" parent="UILayer/HBoxContainer"]
@@ -338,13 +330,6 @@ placeholder_text = "R$200,00"
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label3" type="Label" parent="UILayer/HBoxContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/InfoBasicas/VBox/HBox"]
-layout_mode = 2
-text = "Confirmar venda"
-
-[node name="CheckBox" type="CheckBox" parent="UILayer/HBoxContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/InfoBasicas/VBox/HBox"]
-layout_mode = 2
-
 [node name="Itens" type="PanelContainer" parent="UILayer/HBoxContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -387,7 +372,7 @@ size_flags_horizontal = 3
 [node name="ItemListPanel" type="PanelContainer" parent="UILayer/HBoxContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Itens/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_tcsiw")
+theme_override_styles/panel = ExtResource("8_ptbg6")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="UILayer/HBoxContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Itens/VBox/ItemListPanel"]
 layout_mode = 2
@@ -541,4 +526,53 @@ editable = false
 [node name="VS4" type="VSeparator" parent="UILayer/HBoxContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Valores/VBox/HBox"]
 layout_mode = 2
 
+[node name="HS2" type="HSeparator" parent="UILayer/HBoxContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox"]
+layout_mode = 2
+
+[node name="RegisterControls" type="PanelContainer" parent="UILayer/HBoxContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox"]
+layout_mode = 2
+
+[node name="Line1" type="HBoxContainer" parent="UILayer/HBoxContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/RegisterControls"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="VS1" type="VSeparator" parent="UILayer/HBoxContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/RegisterControls/Line1"]
+layout_mode = 2
+
+[node name="Collum1" type="Button" parent="UILayer/HBoxContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/RegisterControls/Line1"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Cancelar"
+
+[node name="Collum2" type="Button" parent="UILayer/HBoxContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/RegisterControls/Line1"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Exportar"
+
+[node name="VS3" type="VSeparator" parent="UILayer/HBoxContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/RegisterControls/Line1"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label3" type="Label" parent="UILayer/HBoxContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/RegisterControls/Line1"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Confirmar venda"
+
+[node name="CheckBox" type="CheckBox" parent="UILayer/HBoxContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/RegisterControls/Line1"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/checkbox_checked_color = Color(0.7090821, 0.76594245, 0, 1)
+
+[node name="Collum3" type="Button" parent="UILayer/HBoxContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/RegisterControls/Line1"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Salvar"
+
+[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/RegisterControls/Line1"]
+layout_mode = 2
+
 [connection signal="pressed" from="UILayer/HBoxContainer/ProductListContainer/VBox/TitleBar/TitleLabel/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="UILayer/HBoxContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Itens/VBox/ItemListOptions/ActionButton" to="." method="_on_select_order_item_pressed"]

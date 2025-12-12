@@ -25,6 +25,7 @@ boot_splash/minimum_display_time=200
 [autoload]
 
 Temp="*res://objects/singletons/temp.gd"
+ExeCore="*res://objects/singletons/exe_core.gd"
 
 [display]
 

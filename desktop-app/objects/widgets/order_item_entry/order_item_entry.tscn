@@ -16,6 +16,8 @@ vertical = true
 
 [node name="OrderItemEntry" type="PanelContainer"]
 custom_minimum_size = Vector2(0, 40)
+offset_right = 800.0
+offset_bottom = 40.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_1i4pp")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
@@ -27,7 +29,6 @@ layout_mode = 2
 [node name="Button" type="Button" parent="HBoxContainer"]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
-size_flags_vertical = 4
 flat = true
 icon_alignment = 1
 

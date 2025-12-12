@@ -1,11 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://bamhd45a2cc8s"]
+[gd_scene load_steps=9 format=3 uid="uid://burt3upaupv8x"]
 
-[ext_resource type="Texture2D" uid="uid://bnb6vysnbmrx4" path="res://assets/icons/feather_white/hexagon.svg" id="1_0njnd"]
-[ext_resource type="Script" uid="uid://bs0kcrj4micwh" path="res://objects/widgets/product_entry/product_entry.gd" id="1_62apb"]
-[ext_resource type="PackedScene" uid="uid://bmrkbrajl2v65" path="res://objects/widgets/product_entry/product_entry_drop_down.tscn" id="2_l7s5g"]
-[ext_resource type="FontFile" uid="uid://c6tj3eanoimrj" path="res://assets/fonts/GlacialIndifference/GlacialIndifference-Regular.otf" id="2_wobld"]
-[ext_resource type="Texture2D" uid="uid://bypyeavo4xawl" path="res://assets/icons/feather_white/edit.svg" id="3_l7s5g"]
-[ext_resource type="Texture2D" uid="uid://bhwhelqkkgseg" path="res://assets/icons/feather_white/menu.svg" id="4_sfv0i"]
+[ext_resource type="Texture2D" uid="uid://cnrqp4d427n3c" path="res://assets/icons/feather_white/user.svg" id="3_c2dm3"]
+[ext_resource type="FontFile" uid="uid://c6tj3eanoimrj" path="res://assets/fonts/GlacialIndifference/GlacialIndifference-Regular.otf" id="4_cr4mi"]
+[ext_resource type="Texture2D" uid="uid://bypyeavo4xawl" path="res://assets/icons/feather_white/edit.svg" id="5_rxsp7"]
+[ext_resource type="Texture2D" uid="uid://bhwhelqkkgseg" path="res://assets/icons/feather_white/menu.svg" id="6_7nms0"]
 
 [sub_resource type="Gradient" id="Gradient_25nw1"]
 interpolation_mode = 2
@@ -24,20 +22,14 @@ texture_margin_right = 5.0
 texture_margin_bottom = 5.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_awg16"]
-font = ExtResource("2_wobld")
+font = ExtResource("4_cr4mi")
 
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_8qg7l"]
-color = Color(0, 0, 0, 0)
-thickness = 3
-vertical = true
-
-[node name="ProductEntry" type="Panel"]
+[node name="OrderEntry" type="Panel"]
 custom_minimum_size = Vector2(0, 40)
-offset_right = 600.0
+offset_left = -308.0
+offset_right = 308.0
 offset_bottom = 40.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_kxfrq")
-script = ExtResource("1_62apb")
-dropdown_menu = ExtResource("2_l7s5g")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -46,17 +38,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+alignment = 1
 
 [node name="Details" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
 
 [node name="VS3" type="VSeparator" parent="VBoxContainer/Details"]
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/Details"]
 layout_mode = 2
-texture = ExtResource("1_0njnd")
+texture = ExtResource("3_c2dm3")
 stretch_mode = 3
 
 [node name="VS2" type="VSeparator" parent="VBoxContainer/Details"]
@@ -70,17 +62,11 @@ label_settings = SubResource("LabelSettings_awg16")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VS1" type="VSeparator" parent="VBoxContainer/Details"]
-custom_minimum_size = Vector2(0, 35)
-layout_mode = 2
-size_flags_vertical = 4
-theme_override_styles/separator = SubResource("StyleBoxLine_8qg7l")
-
 [node name="ProductName" type="Label" parent="VBoxContainer/Details"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "Product Name"
+text = "Cliente"
 label_settings = SubResource("LabelSettings_awg16")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -92,15 +78,13 @@ alignment = 2
 
 [node name="Edit" type="Button" parent="VBoxContainer/Details/Actions"]
 layout_mode = 2
-icon = ExtResource("3_l7s5g")
+icon = ExtResource("5_rxsp7")
 flat = true
 
 [node name="More" type="Button" parent="VBoxContainer/Details/Actions"]
 layout_mode = 2
-icon = ExtResource("4_sfv0i")
+icon = ExtResource("6_7nms0")
 flat = true
 
 [node name="VS4" type="VSeparator" parent="VBoxContainer/Details"]
 layout_mode = 2
-
-[connection signal="pressed" from="VBoxContainer/Details/Actions/More" to="." method="_on_more_pressed"]

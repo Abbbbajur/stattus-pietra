@@ -1,0 +1,68 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyujrpk6yacni"]
+
+[ext_resource type="Script" uid="uid://bg124cnht0862" path="res://scenes/item_selection_window/item_selection_window.gd" id="1_2w3fe"]
+
+[node name="ItemSelectionWindow" type="Window"]
+oversampling_override = 1.0
+title = "Selecionar Item"
+initial_position = 4
+size = Vector2i(600, 400)
+transient = true
+transient_to_focused = true
+exclusive = true
+min_size = Vector2i(600, 400)
+script = ExtResource("1_2w3fe")
+
+[node name="BGLayer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="BGLayer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.20392157, 0.22352941, 0.2, 1)
+
+[node name="UILayer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="UILayer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+drag_area_highlight_in_editor = true
+
+[node name="Controls" type="MarginContainer" parent="UILayer/HSplitContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="UILayer/HSplitContainer/Controls"]
+layout_mode = 2
+
+[node name="List" type="MarginContainer" parent="UILayer/HSplitContainer"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="UILayer/HSplitContainer/List"]
+layout_mode = 2
+
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
