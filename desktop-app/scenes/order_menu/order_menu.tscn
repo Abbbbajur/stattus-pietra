@@ -1,6 +1,5 @@
-[gd_scene load_steps=19 format=3 uid="uid://cbsqrfhkf7bha"]
+[gd_scene load_steps=18 format=3 uid="uid://cbsqrfhkf7bha"]
 
-[ext_resource type="Theme" uid="uid://dkj7k0poe7e01" path="res://assets/theme/green_dark_theme.tres" id="1_kt7nt"]
 [ext_resource type="Script" uid="uid://b35gq6opv4xij" path="res://scenes/order_menu/order_menu.gd" id="2_1i4pp"]
 [ext_resource type="PackedScene" uid="uid://bn20t5o34hvne" path="res://objects/widgets/side_bar/side_bar.tscn" id="3_7gfl6"]
 [ext_resource type="StyleBox" uid="uid://big45rb2if1ur" path="res://assets/theme/StyleBox/FlatGray.tres" id="4_k7pfq"]
@@ -44,7 +43,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_kt7nt")
 script = ExtResource("2_1i4pp")
 
 [node name="BGLayer" type="Control" parent="."]

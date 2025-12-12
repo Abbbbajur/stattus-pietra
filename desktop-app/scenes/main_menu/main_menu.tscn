@@ -1,6 +1,5 @@
-[gd_scene load_steps=10 format=3 uid="uid://3u6u1f5gdbws"]
+[gd_scene load_steps=9 format=3 uid="uid://3u6u1f5gdbws"]
 
-[ext_resource type="Theme" uid="uid://dkj7k0poe7e01" path="res://assets/theme/green_dark_theme.tres" id="1_3tiwv"]
 [ext_resource type="Script" uid="uid://wug645cmy301" path="res://scenes/main_menu/main_menu.gd" id="2_3ovsr"]
 [ext_resource type="Texture2D" uid="uid://cy3ehitn1r7k2" path="res://assets/brand/textures/STATTUS Escuro.png" id="2_422ur"]
 [ext_resource type="Texture2D" uid="uid://cq740g0c1v8e2" path="res://assets/icons/feather_white/tag.svg" id="4_4v3x4"]
@@ -24,7 +23,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_3tiwv")
 script = ExtResource("2_3ovsr")
 
 [node name="BGLayer" type="Control" parent="."]
@@ -83,6 +81,7 @@ stretch_mode = 3
 
 [node name="Panel" type="PanelContainer" parent="UILayer/MainMenuMarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_type_variation = &"SolidPanelContainer"
 
 [node name="ButtonList" type="HBoxContainer" parent="UILayer/MainMenuMarginContainer/VBoxContainer/Panel"]
 layout_mode = 2
