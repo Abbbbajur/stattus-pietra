@@ -1,12 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://v4ovmsqs7ce6"]
+[gd_scene load_steps=14 format=3 uid="uid://v4ovmsqs7ce6"]
 
-[ext_resource type="Theme" uid="uid://dkj7k0poe7e01" path="res://assets/theme/dark_theme.tres" id="1_2arva"]
+[ext_resource type="Theme" uid="uid://cwqm4buus4nki" path="res://assets/theme/green_flat_theme.tres" id="1_xil34"]
 [ext_resource type="Script" uid="uid://dld2bxudflnno" path="res://scenes/clients_menu/clients_menu.gd" id="2_fcubx"]
 [ext_resource type="StyleBox" uid="uid://big45rb2if1ur" path="res://assets/theme/StyleBox/FlatGray.tres" id="4_8nr1b"]
 [ext_resource type="FontFile" uid="uid://dhrpsw2sxvt54" path="res://assets/fonts/GlacialIndifference/GlacialIndifference-Bold.otf" id="5_yj5ad"]
 [ext_resource type="Texture2D" uid="uid://nqg80gxcfwtd" path="res://assets/icons/feather_white/arrow-left.svg" id="6_dkqbu"]
 [ext_resource type="PackedScene" uid="uid://burt3upaupv8x" path="res://objects/widgets/client_entry/client_entry.tscn" id="6_fcubx"]
-[ext_resource type="StyleBox" uid="uid://b7l5yim3ois4h" path="res://assets/theme/StyleBox/GradientGray.tres" id="7_1lo50"]
 [ext_resource type="StyleBox" uid="uid://dn3tb00831a12" path="res://assets/theme/StyleBox/dark_transparent.tres" id="8_jsv1v"]
 [ext_resource type="Texture2D" uid="uid://c1xmt84xrai4a" path="res://assets/icons/feather_white/arrow-up-right.svg" id="8_xil34"]
 
@@ -35,7 +34,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_2arva")
+theme = ExtResource("1_xil34")
 script = ExtResource("2_fcubx")
 
 [node name="BGLayer" type="Control" parent="."]
@@ -284,7 +283,7 @@ size_flags_vertical = 3
 
 [node name="Tabelas1" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_styles/panel = ExtResource("7_1lo50")
+theme_type_variation = &"SolidPanelContainer"
 
 [node name="MarginContainer" type="MarginContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas1"]
 layout_mode = 2
@@ -497,6 +496,7 @@ layout_mode = 2
 
 [node name="Tabelas2" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer"]
 layout_mode = 2
+theme_type_variation = &"SolidPanelContainer"
 
 [node name="MarginContainer" type="MarginContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas2"]
 layout_mode = 2
@@ -623,6 +623,7 @@ layout_mode = 2
 
 [node name="Tabelas3" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer"]
 layout_mode = 2
+theme_type_variation = &"SolidPanelContainer"
 
 [node name="MarginContainer" type="MarginContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas3"]
 layout_mode = 2
@@ -741,6 +742,7 @@ layout_mode = 2
 
 [node name="Tabelas4" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer"]
 layout_mode = 2
+theme_type_variation = &"SolidPanelContainer"
 
 [node name="MarginContainer" type="MarginContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas4"]
 layout_mode = 2
@@ -880,6 +882,7 @@ layout_mode = 2
 
 [node name="Tabelas5" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer"]
 layout_mode = 2
+theme_type_variation = &"SolidPanelContainer"
 
 [node name="MarginContainer" type="MarginContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas5"]
 layout_mode = 2

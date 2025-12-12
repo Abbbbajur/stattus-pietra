@@ -1,0 +1,144 @@
+[gd_resource type="Theme" load_steps=18 format=3 uid="uid://cwqm4buus4nki"]
+
+[ext_resource type="FontFile" uid="uid://dplf8yv3b52ft" path="res://assets/fonts/Poppins/Poppins-Bold.ttf" id="1_w63fu"]
+[ext_resource type="FontFile" uid="uid://cgsrn6iluwd4" path="res://assets/fonts/Poppins/Poppins-Italic.ttf" id="2_dfk7s"]
+[ext_resource type="FontFile" uid="uid://dgrr5r2khrknk" path="res://assets/fonts/Poppins/Poppins-Regular.ttf" id="3_l5kvc"]
+[ext_resource type="StyleBox" uid="uid://big45rb2if1ur" path="res://assets/theme/StyleBox/FlatGray.tres" id="4_n4ghn"]
+[ext_resource type="StyleBox" uid="uid://dn3tb00831a12" path="res://assets/theme/StyleBox/dark_transparent.tres" id="5_dfk7s"]
+[ext_resource type="StyleBox" uid="uid://n5rpfsws01dx" path="res://assets/theme/StyleBox/flat/green_1.tres" id="5_w63fu"]
+[ext_resource type="FontFile" uid="uid://cqhrjvdqdxc6w" path="res://assets/fonts/Poppins/Poppins-Light.ttf" id="6_47auh"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_7u566"]
+color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0snvo"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qw6a2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dfk7s"]
+bg_color = Color(0, 0, 0, 0.22745098)
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l5kvc"]
+bg_color = Color(0, 0, 0, 0.39215687)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n4ghn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v7pke"]
+bg_color = Color(0, 0, 0, 0.11764706)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_47auh"]
+bg_color = Color(0.25490198, 0.29411766, 0.2509804, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w2omp"]
+bg_color = Color(0, 0, 0, 0.22745098)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3fs13"]
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0.30588236)
+border_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+expand_margin_top = 5.0
+shadow_color = Color(0, 0, 0, 0.39215687)
+shadow_offset = Vector2(0, 6)
+anti_aliasing = false
+
+[resource]
+default_font = ExtResource("3_l5kvc")
+default_font_size = 12
+HSeparator/constants/separation = 10
+HSeparator/styles/separator = SubResource("StyleBoxLine_7u566")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/fonts/body_bold = ExtResource("1_w63fu")
+Label/fonts/body_italic = ExtResource("2_dfk7s")
+Label/fonts/body_regular = ExtResource("3_l5kvc")
+Label/fonts/font = ExtResource("3_l5kvc")
+Label/fonts/title_bold = ExtResource("3_l5kvc")
+Label/fonts/title_regular = ExtResource("3_l5kvc")
+Label/styles/focus = SubResource("StyleBoxFlat_0snvo")
+Label/styles/normal = SubResource("StyleBoxEmpty_qw6a2")
+LineEdit/font_sizes/font_size = 14
+MarginContainer/constants/margin_bottom = 10
+MarginContainer/constants/margin_left = 10
+MarginContainer/constants/margin_right = 10
+MarginContainer/constants/margin_top = 10
+Panel/styles/panel = ExtResource("4_n4ghn")
+PanelContainer/styles/panel = ExtResource("5_dfk7s")
+PanelContainer/styles/panel_transparent = null
+SolidPanelContainer/base_type = &"PanelContainer"
+SolidPanelContainer/styles/panel = ExtResource("5_w63fu")
+TabContainer/colors/drop_mark_color = Color(0, 0, 0, 1)
+TabContainer/colors/font_disabled_color = Color(0, 0, 0, 1)
+TabContainer/colors/font_hovered_color = Color(0, 0, 0, 1)
+TabContainer/colors/font_outline_color = Color(0, 0, 0, 1)
+TabContainer/colors/font_selected_color = Color(1, 1, 1, 1)
+TabContainer/colors/font_unselected_color = Color(0.4942233, 0.4942233, 0.49422324, 1)
+TabContainer/constants/icon_max_width = 0
+TabContainer/constants/icon_separation = 0
+TabContainer/constants/outline_size = 0
+TabContainer/constants/side_margin = 10
+TabContainer/constants/tab_separation = 6
+TabContainer/font_sizes/font_size = 16
+TabContainer/fonts/font = ExtResource("6_47auh")
+TabContainer/icons/decrement = null
+TabContainer/icons/decrement_highlight = null
+TabContainer/icons/drop_mark = null
+TabContainer/icons/increment = null
+TabContainer/icons/increment_highlight = null
+TabContainer/icons/menu = null
+TabContainer/icons/menu_highlight = null
+TabContainer/styles/panel = SubResource("StyleBoxFlat_dfk7s")
+TabContainer/styles/tab_disabled = SubResource("StyleBoxFlat_l5kvc")
+TabContainer/styles/tab_focus = SubResource("StyleBoxEmpty_n4ghn")
+TabContainer/styles/tab_hovered = SubResource("StyleBoxFlat_v7pke")
+TabContainer/styles/tab_selected = SubResource("StyleBoxFlat_47auh")
+TabContainer/styles/tab_unselected = SubResource("StyleBoxFlat_w2omp")
+TabContainer/styles/tabbar_background = SubResource("StyleBoxFlat_3fs13")
+VSeparator/constants/separation = 10
+VSeparator/styles/separator = SubResource("StyleBoxLine_7u566")

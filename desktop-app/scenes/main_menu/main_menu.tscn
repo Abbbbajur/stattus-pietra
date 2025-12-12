@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://3u6u1f5gdbws"]
 
-[ext_resource type="Theme" uid="uid://dkj7k0poe7e01" path="res://assets/theme/dark_theme.tres" id="1_3tiwv"]
+[ext_resource type="Theme" uid="uid://dkj7k0poe7e01" path="res://assets/theme/green_dark_theme.tres" id="1_3tiwv"]
 [ext_resource type="Script" uid="uid://wug645cmy301" path="res://scenes/main_menu/main_menu.gd" id="2_3ovsr"]
 [ext_resource type="Texture2D" uid="uid://cy3ehitn1r7k2" path="res://assets/brand/textures/STATTUS Escuro.png" id="2_422ur"]
 [ext_resource type="Texture2D" uid="uid://cq740g0c1v8e2" path="res://assets/icons/feather_white/tag.svg" id="4_4v3x4"]
