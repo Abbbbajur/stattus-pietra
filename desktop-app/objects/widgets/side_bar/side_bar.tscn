@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://bn20t5o34hvne"]
+
+[ext_resource type="Texture2D" uid="uid://nqg80gxcfwtd" path="res://assets/icons/feather_white/arrow-left.svg" id="1_in3r7"]
+[ext_resource type="Script" uid="uid://bgp4plwrl7rl3" path="res://objects/widgets/side_bar/side_bar.gd" id="1_wqsk3"]
+[ext_resource type="Texture2D" uid="uid://cq740g0c1v8e2" path="res://assets/icons/feather_white/tag.svg" id="2_wqsk3"]
+[ext_resource type="Script" uid="uid://gcc477bovc31" path="res://objects/widgets/side_bar/side_bar_button.gd" id="3_howtx"]
+[ext_resource type="Texture2D" uid="uid://ce1k6dmkmpuk3" path="res://assets/icons/feather_white/package.svg" id="3_opevo"]
+[ext_resource type="Texture2D" uid="uid://cctih0qxtd313" path="res://assets/icons/feather_white/users.svg" id="4_howtx"]
+
+[node name="SideBar" type="MarginContainer" node_paths=PackedStringArray("button_list")]
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_right = 0
+script = ExtResource("1_wqsk3")
+button_list = NodePath("ButtonList/VBoxButtonList")
+
+[node name="ButtonList" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_type_variation = &"NoShadowPanelContainer"
+
+[node name="VBoxButtonList" type="VBoxContainer" parent="ButtonList"]
+layout_mode = 2
+alignment = 1
+
+[node name="Menu" type="Button" parent="ButtonList/VBoxButtonList"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_vertical = 2
+icon = ExtResource("1_in3r7")
+flat = true
+icon_alignment = 1
+script = ExtResource("3_howtx")
+metadata/_custom_type_script = "uid://gcc477bovc31"
+
+[node name="Produtos" type="Button" parent="ButtonList/VBoxButtonList"]
+modulate = Color(0.11149638, 0.13326183, 0.10932677, 1)
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+icon = ExtResource("2_wqsk3")
+flat = true
+icon_alignment = 1
+script = ExtResource("3_howtx")
+metadata/_custom_type_script = "uid://gcc477bovc31"
+
+[node name="Pedidos" type="Button" parent="ButtonList/VBoxButtonList"]
+modulate = Color(0.11149638, 0.13326183, 0.10932677, 1)
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+icon = ExtResource("3_opevo")
+flat = true
+icon_alignment = 1
+script = ExtResource("3_howtx")
+metadata/_custom_type_script = "uid://gcc477bovc31"
+
+[node name="Clientes" type="Button" parent="ButtonList/VBoxButtonList"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+icon = ExtResource("4_howtx")
+flat = true
+icon_alignment = 1
+script = ExtResource("3_howtx")
+metadata/_custom_type_script = "uid://gcc477bovc31"
+
+[node name="HS1" type="HSeparator" parent="ButtonList/VBoxButtonList"]
+layout_mode = 2
+size_flags_vertical = 3
