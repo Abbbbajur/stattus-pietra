@@ -36,6 +36,10 @@ window/size/viewport_height=720
 
 project/assembly_name="stattus-pietra"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/StyleboxFancy/plugin.cfg", "res://addons/inspector_tabs/plugin.cfg", "res://addons/script-ide/plugin.cfg")
+
 [gui]
 
 theme/custom="uid://cwqm4buus4nki"
