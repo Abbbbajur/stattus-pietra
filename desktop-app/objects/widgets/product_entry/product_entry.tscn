@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bamhd45a2cc8s"]
+[gd_scene load_steps=9 format=3 uid="uid://bamhd45a2cc8s"]
 
 [ext_resource type="Texture2D" uid="uid://bnb6vysnbmrx4" path="res://assets/icons/feather_white/hexagon.svg" id="1_0njnd"]
 [ext_resource type="Script" uid="uid://bs0kcrj4micwh" path="res://objects/widgets/product_entry/product_entry.gd" id="1_62apb"]
@@ -6,22 +6,6 @@
 [ext_resource type="FontFile" uid="uid://c6tj3eanoimrj" path="res://assets/fonts/GlacialIndifference/GlacialIndifference-Regular.otf" id="2_wobld"]
 [ext_resource type="Texture2D" uid="uid://bypyeavo4xawl" path="res://assets/icons/feather_white/edit.svg" id="3_l7s5g"]
 [ext_resource type="Texture2D" uid="uid://bhwhelqkkgseg" path="res://assets/icons/feather_white/menu.svg" id="4_sfv0i"]
-
-[sub_resource type="Gradient" id="Gradient_25nw1"]
-interpolation_mode = 2
-colors = PackedColorArray(0.16383225, 0.19435415, 0.16106632, 1, 0.2627451, 0.30588236, 0.25882354, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_r7lly"]
-gradient = SubResource("Gradient_25nw1")
-fill_from = Vector2(0.5, 1)
-fill_to = Vector2(0.5, 0)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kxfrq"]
-texture = SubResource("GradientTexture2D_r7lly")
-texture_margin_left = 5.0
-texture_margin_top = 5.0
-texture_margin_right = 5.0
-texture_margin_bottom = 5.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_awg16"]
 font = ExtResource("2_wobld")
@@ -31,21 +15,16 @@ color = Color(0, 0, 0, 0)
 thickness = 3
 vertical = true
 
-[node name="ProductEntry" type="Panel"]
+[node name="ProductEntry" type="PanelContainer"]
 custom_minimum_size = Vector2(0, 40)
 offset_right = 600.0
 offset_bottom = 40.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_kxfrq")
+theme_type_variation = &"SolidPanelContainer"
 script = ExtResource("1_62apb")
 dropdown_menu = ExtResource("2_l7s5g")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 
 [node name="Details" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2

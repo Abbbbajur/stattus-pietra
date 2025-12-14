@@ -1,12 +1,16 @@
-[gd_resource type="Theme" load_steps=22 format=3 uid="uid://cwqm4buus4nki"]
+[gd_resource type="Theme" load_steps=25 format=3 uid="uid://cwqm4buus4nki"]
 
+[ext_resource type="Texture2D" uid="uid://ru4ba7mpl52v" path="res://assets/icons/feather_white/check-square.svg" id="1_n4ghn"]
 [ext_resource type="FontFile" uid="uid://dplf8yv3b52ft" path="res://assets/fonts/Poppins/Poppins-Bold.ttf" id="1_w63fu"]
 [ext_resource type="FontFile" uid="uid://cgsrn6iluwd4" path="res://assets/fonts/Poppins/Poppins-Italic.ttf" id="2_dfk7s"]
+[ext_resource type="Texture2D" uid="uid://cvqahyhm43nr3" path="res://assets/icons/feather_white/square.svg" id="2_v7pke"]
 [ext_resource type="FontFile" uid="uid://dgrr5r2khrknk" path="res://assets/fonts/Poppins/Poppins-Regular.ttf" id="3_l5kvc"]
 [ext_resource type="StyleBox" uid="uid://big45rb2if1ur" path="res://assets/theme/StyleBox/FlatGray.tres" id="4_n4ghn"]
 [ext_resource type="StyleBox" uid="uid://dn3tb00831a12" path="res://assets/theme/StyleBox/dark_transparent.tres" id="5_dfk7s"]
 [ext_resource type="StyleBox" uid="uid://n5rpfsws01dx" path="res://assets/theme/StyleBox/flat/green_1.tres" id="5_w63fu"]
 [ext_resource type="FontFile" uid="uid://cqhrjvdqdxc6w" path="res://assets/fonts/Poppins/Poppins-Light.ttf" id="6_47auh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v7pke"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_7u566"]
 color = Color(0, 0, 0, 0)
@@ -130,6 +134,10 @@ corner_detail = 5
 [resource]
 default_font = ExtResource("3_l5kvc")
 default_font_size = 12
+CheckButton/colors/button_checked_color = Color(0.6509804, 1, 0.36078432, 1)
+CheckButton/icons/checked = ExtResource("1_n4ghn")
+CheckButton/icons/unchecked = ExtResource("2_v7pke")
+CheckButton/styles/focus = SubResource("StyleBoxEmpty_v7pke")
 HSeparator/constants/separation = 10
 HSeparator/styles/separator = SubResource("StyleBoxLine_7u566")
 Label/colors/font_color = Color(1, 1, 1, 1)
@@ -161,6 +169,7 @@ NoShadowPanelContainer/styles/panel = SubResource("StyleBoxFlat_i71j6")
 Panel/styles/panel = ExtResource("4_n4ghn")
 PanelContainer/styles/panel = ExtResource("5_dfk7s")
 PanelContainer/styles/panel_transparent = null
+PopupPanel/styles/panel = ExtResource("5_w63fu")
 SolidPanelContainer/base_type = &"PanelContainer"
 SolidPanelContainer/styles/panel = ExtResource("5_w63fu")
 TabContainer/colors/drop_mark_color = Color(0, 0, 0, 1)
@@ -191,5 +200,6 @@ TabContainer/styles/tab_selected = SubResource("StyleBoxFlat_47auh")
 TabContainer/styles/tab_unselected = SubResource("StyleBoxFlat_w2omp")
 TabContainer/styles/tabbar_background = SubResource("StyleBoxFlat_3fs13")
 TextEdit/styles/normal = SubResource("StyleBoxFlat_ki6qj")
+TooltipPanel/styles/panel = ExtResource("5_w63fu")
 VSeparator/constants/separation = 10
 VSeparator/styles/separator = SubResource("StyleBoxLine_7u566")

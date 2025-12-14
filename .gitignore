@@ -10,7 +10,6 @@ export.cfg
 export_credentials.cfg
 
 # Godot editor-only addons
-script-ide/
 inspector_tabs/
 
 # Imported translations (automatically generated from CSV files)

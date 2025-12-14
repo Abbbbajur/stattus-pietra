@@ -1,21 +1,22 @@
-[gd_scene load_steps=8 format=3 uid="uid://cyujrpk6yacni"]
+[gd_scene load_steps=9 format=3 uid="uid://dl5rv2q42ul3f"]
 
-[ext_resource type="Script" uid="uid://bg124cnht0862" path="res://scenes/item_selection_window/item_selection_window.gd" id="1_2w3fe"]
-[ext_resource type="Texture2D" uid="uid://bnb6vysnbmrx4" path="res://assets/icons/feather_white/hexagon.svg" id="2_7ahiv"]
-[ext_resource type="Script" uid="uid://dpxu4taimeqpg" path="res://scenes/item_selection_window/search_option_table.gd" id="2_gbvwh"]
-[ext_resource type="FontFile" uid="uid://c6tj3eanoimrj" path="res://assets/fonts/GlacialIndifference/GlacialIndifference-Regular.otf" id="3_gbvwh"]
+[ext_resource type="Script" uid="uid://016oirg6foy2" path="res://scenes/client_selection_window/client_selection_window.gd" id="1_mwlvv"]
+[ext_resource type="Texture2D" uid="uid://48pf3vyc5at4" path="res://assets/icons/feather_white/plus.svg" id="2_8l0fr"]
+[ext_resource type="Texture2D" uid="uid://bnb6vysnbmrx4" path="res://assets/icons/feather_white/hexagon.svg" id="2_d060b"]
+[ext_resource type="Script" uid="uid://dpxu4taimeqpg" path="res://scenes/item_selection_window/search_option_table.gd" id="2_txg30"]
+[ext_resource type="FontFile" uid="uid://c6tj3eanoimrj" path="res://assets/fonts/GlacialIndifference/GlacialIndifference-Regular.otf" id="3_cqhgc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7ahiv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_l7gs6"]
-font = ExtResource("3_gbvwh")
+font = ExtResource("3_cqhgc")
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_uino6"]
 color = Color(0, 0, 0, 0)
 thickness = 3
 vertical = true
 
-[node name="ItemSelectionWindow" type="Window"]
+[node name="ClientSelectionWindow" type="Window"]
 oversampling_override = 1.0
 title = "Selecionar Item"
 initial_position = 4
@@ -25,7 +26,7 @@ transient_to_focused = true
 exclusive = true
 minimize_disabled = true
 min_size = Vector2i(600, 400)
-script = ExtResource("1_2w3fe")
+script = ExtResource("1_mwlvv")
 
 [node name="BGLayer" type="Control" parent="."]
 layout_mode = 3
@@ -64,7 +65,7 @@ grow_vertical = 2
 drag_area_highlight_in_editor = true
 
 [node name="Controls" type="MarginContainer" parent="UILayer/HSplitContainer"]
-custom_minimum_size = Vector2(250, 0)
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="UILayer/HSplitContainer/Controls"]
@@ -76,7 +77,7 @@ layout_mode = 2
 [node name="SearchOptionTable" type="PanelContainer" parent="UILayer/HSplitContainer/Controls/PanelContainer/VBoxContainer" node_paths=PackedStringArray("advanced_query_hiding_nodes")]
 layout_mode = 2
 theme_type_variation = &"ListEntryPanel"
-script = ExtResource("2_gbvwh")
+script = ExtResource("2_txg30")
 advanced_query_hiding_nodes = [NodePath("MarginContainer/VBox/OptionLine1"), NodePath("MarginContainer/VBox/OptionLine2"), NodePath("MarginContainer/VBox/OptionLine3"), NodePath("MarginContainer/VBox/OptionLine4"), NodePath("../OptionTable2")]
 
 [node name="MarginContainer" type="MarginContainer" parent="UILayer/HSplitContainer/Controls/PanelContainer/VBoxContainer/SearchOptionTable"]
@@ -115,6 +116,7 @@ layout_mode = 2
 
 [node name="CheckButton" type="CheckButton" parent="UILayer/HSplitContainer/Controls/PanelContainer/VBoxContainer/SearchOptionTable/MarginContainer/VBox/OptionLine2"]
 layout_mode = 2
+button_pressed = true
 
 [node name="Label" type="Label" parent="UILayer/HSplitContainer/Controls/PanelContainer/VBoxContainer/SearchOptionTable/MarginContainer/VBox/OptionLine2"]
 layout_mode = 2
@@ -126,6 +128,7 @@ layout_mode = 2
 
 [node name="CheckButton" type="CheckButton" parent="UILayer/HSplitContainer/Controls/PanelContainer/VBoxContainer/SearchOptionTable/MarginContainer/VBox/OptionLine3"]
 layout_mode = 2
+button_pressed = true
 
 [node name="Label" type="Label" parent="UILayer/HSplitContainer/Controls/PanelContainer/VBoxContainer/SearchOptionTable/MarginContainer/VBox/OptionLine3"]
 layout_mode = 2
@@ -137,6 +140,7 @@ layout_mode = 2
 
 [node name="CheckButton" type="CheckButton" parent="UILayer/HSplitContainer/Controls/PanelContainer/VBoxContainer/SearchOptionTable/MarginContainer/VBox/OptionLine4"]
 layout_mode = 2
+button_pressed = true
 
 [node name="Label" type="Label" parent="UILayer/HSplitContainer/Controls/PanelContainer/VBoxContainer/SearchOptionTable/MarginContainer/VBox/OptionLine4"]
 layout_mode = 2
@@ -161,24 +165,8 @@ horizontal_alignment = 1
 [node name="OptionLine1" type="HBoxContainer" parent="UILayer/HSplitContainer/Controls/PanelContainer/VBoxContainer/OptionTable2/MarginContainer/VBox"]
 layout_mode = 2
 
-[node name="OptionButton" type="OptionButton" parent="UILayer/HSplitContainer/Controls/PanelContainer/VBoxContainer/OptionTable2/MarginContainer/VBox/OptionLine1"]
-layout_mode = 2
-size_flags_horizontal = 3
-selected = 0
-item_count = 1
-popup/item_0/text = "Tipo"
-popup/item_0/id = 0
-
 [node name="OptionLine2" type="HBoxContainer" parent="UILayer/HSplitContainer/Controls/PanelContainer/VBoxContainer/OptionTable2/MarginContainer/VBox"]
 layout_mode = 2
-
-[node name="OptionButton" type="OptionButton" parent="UILayer/HSplitContainer/Controls/PanelContainer/VBoxContainer/OptionTable2/MarginContainer/VBox/OptionLine2"]
-layout_mode = 2
-size_flags_horizontal = 3
-selected = 0
-item_count = 1
-popup/item_0/text = "Categoria"
-popup/item_0/id = 0
 
 [node name="OptionLine3" type="HBoxContainer" parent="UILayer/HSplitContainer/Controls/PanelContainer/VBoxContainer/OptionTable2/MarginContainer/VBox"]
 layout_mode = 2
@@ -187,29 +175,16 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 selected = 0
-item_count = 1
-popup/item_0/text = "Status"
+item_count = 2
+popup/item_0/text = "Mais antigo que"
 popup/item_0/id = 0
-
-[node name="OptionLine4" type="HBoxContainer" parent="UILayer/HSplitContainer/Controls/PanelContainer/VBoxContainer/OptionTable2/MarginContainer/VBox"]
-layout_mode = 2
-
-[node name="OptionButton" type="OptionButton" parent="UILayer/HSplitContainer/Controls/PanelContainer/VBoxContainer/OptionTable2/MarginContainer/VBox/OptionLine4"]
-layout_mode = 2
-size_flags_horizontal = 3
-selected = 0
-item_count = 3
-popup/item_0/text = "Maior que"
-popup/item_0/id = 0
-popup/item_1/text = "Menor que"
+popup/item_1/text = "Mais novo que"
 popup/item_1/id = 1
-popup/item_2/text = "Exato"
-popup/item_2/id = 2
 
-[node name="OptionButton2" type="LineEdit" parent="UILayer/HSplitContainer/Controls/PanelContainer/VBoxContainer/OptionTable2/MarginContainer/VBox/OptionLine4"]
+[node name="OptionButton2" type="LineEdit" parent="UILayer/HSplitContainer/Controls/PanelContainer/VBoxContainer/OptionTable2/MarginContainer/VBox/OptionLine3"]
 layout_mode = 2
 size_flags_horizontal = 3
-placeholder_text = "Preço (R$)"
+placeholder_text = "##/##/####"
 
 [node name="OptionTable3" type="PanelContainer" parent="UILayer/HSplitContainer/Controls/PanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -239,13 +214,13 @@ popup/item_0/text = "Ordem alfabética"
 popup/item_0/id = 0
 popup/item_1/text = "Ordem numérica"
 popup/item_1/id = 1
-popup/item_2/text = "Mais caro"
+popup/item_2/text = "Pedido mais recente"
 popup/item_2/id = 2
-popup/item_3/text = "Mais barato"
+popup/item_3/text = "Pedido mais antigo"
 popup/item_3/id = 3
-popup/item_4/text = "Mais vendido"
+popup/item_4/text = "Cadastro mais recente"
 popup/item_4/id = 4
-popup/item_5/text = "Menos vendido"
+popup/item_5/text = "Cadastro mais antigo"
 popup/item_5/id = 5
 
 [node name="List" type="MarginContainer" parent="UILayer/HSplitContainer"]
@@ -263,13 +238,23 @@ layout_mode = 2
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="UILayer/HSplitContainer/List/PanelContainer/VBox/Header"]
+[node name="HBoxContainer" type="HBoxContainer" parent="UILayer/HSplitContainer/List/PanelContainer/VBox/Header"]
 layout_mode = 2
+
+[node name="Label" type="Label" parent="UILayer/HSplitContainer/List/PanelContainer/VBox/Header/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "Selecione um item para adicionar ao pedido"
+text = "Selecione um cliente já cadastrado ou"
 label_settings = SubResource("LabelSettings_7ahiv")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="RegisterNewClientButton" type="Button" parent="UILayer/HSplitContainer/List/PanelContainer/VBox/Header/HBoxContainer"]
+layout_mode = 2
+text = "Cadastre novo cliente"
+icon = ExtResource("2_8l0fr")
+icon_alignment = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="UILayer/HSplitContainer/List/PanelContainer/VBox"]
 layout_mode = 2
@@ -280,30 +265,30 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="ProductEntrySimple" type="PanelContainer" parent="UILayer/HSplitContainer/List/PanelContainer/VBox/ScrollContainer/VBox"]
+[node name="ClientEntrySimple" type="PanelContainer" parent="UILayer/HSplitContainer/List/PanelContainer/VBox/ScrollContainer/VBox"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_type_variation = &"SolidPanelContainer"
 
-[node name="Button" type="Button" parent="UILayer/HSplitContainer/List/PanelContainer/VBox/ScrollContainer/VBox/ProductEntrySimple"]
+[node name="Button" type="Button" parent="UILayer/HSplitContainer/List/PanelContainer/VBox/ScrollContainer/VBox/ClientEntrySimple"]
 layout_mode = 2
 flat = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UILayer/HSplitContainer/List/PanelContainer/VBox/ScrollContainer/VBox/ProductEntrySimple"]
+[node name="HBoxContainer" type="HBoxContainer" parent="UILayer/HSplitContainer/List/PanelContainer/VBox/ScrollContainer/VBox/ClientEntrySimple"]
 layout_mode = 2
 
-[node name="VS3" type="VSeparator" parent="UILayer/HSplitContainer/List/PanelContainer/VBox/ScrollContainer/VBox/ProductEntrySimple/HBoxContainer"]
+[node name="VS3" type="VSeparator" parent="UILayer/HSplitContainer/List/PanelContainer/VBox/ScrollContainer/VBox/ClientEntrySimple/HBoxContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="UILayer/HSplitContainer/List/PanelContainer/VBox/ScrollContainer/VBox/ProductEntrySimple/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="UILayer/HSplitContainer/List/PanelContainer/VBox/ScrollContainer/VBox/ClientEntrySimple/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("2_7ahiv")
+texture = ExtResource("2_d060b")
 stretch_mode = 3
 
-[node name="VS2" type="VSeparator" parent="UILayer/HSplitContainer/List/PanelContainer/VBox/ScrollContainer/VBox/ProductEntrySimple/HBoxContainer"]
+[node name="VS2" type="VSeparator" parent="UILayer/HSplitContainer/List/PanelContainer/VBox/ScrollContainer/VBox/ClientEntrySimple/HBoxContainer"]
 layout_mode = 2
 
-[node name="Code" type="Label" parent="UILayer/HSplitContainer/List/PanelContainer/VBox/ScrollContainer/VBox/ProductEntrySimple/HBoxContainer"]
+[node name="Code" type="Label" parent="UILayer/HSplitContainer/List/PanelContainer/VBox/ScrollContainer/VBox/ClientEntrySimple/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 1
 text = "000000"
@@ -311,22 +296,37 @@ label_settings = SubResource("LabelSettings_l7gs6")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VS1" type="VSeparator" parent="UILayer/HSplitContainer/List/PanelContainer/VBox/ScrollContainer/VBox/ProductEntrySimple/HBoxContainer"]
+[node name="VS1" type="VSeparator" parent="UILayer/HSplitContainer/List/PanelContainer/VBox/ScrollContainer/VBox/ClientEntrySimple/HBoxContainer"]
 custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_styles/separator = SubResource("StyleBoxLine_uino6")
 
-[node name="ProductName" type="Label" parent="UILayer/HSplitContainer/List/PanelContainer/VBox/ScrollContainer/VBox/ProductEntrySimple/HBoxContainer"]
+[node name="ProductName" type="Label" parent="UILayer/HSplitContainer/List/PanelContainer/VBox/ScrollContainer/VBox/ClientEntrySimple/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "Product Name"
+text = "Client Name"
 label_settings = SubResource("LabelSettings_l7gs6")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VS4" type="VSeparator" parent="UILayer/HSplitContainer/List/PanelContainer/VBox/ScrollContainer/VBox/ProductEntrySimple/HBoxContainer"]
+[node name="VS5" type="VSeparator" parent="UILayer/HSplitContainer/List/PanelContainer/VBox/ScrollContainer/VBox/ClientEntrySimple/HBoxContainer"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/separator = SubResource("StyleBoxLine_uino6")
+
+[node name="CNPJ" type="Label" parent="UILayer/HSplitContainer/List/PanelContainer/VBox/ScrollContainer/VBox/ClientEntrySimple/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 1
+text = "CPF/CNPJ"
+label_settings = SubResource("LabelSettings_l7gs6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VS4" type="VSeparator" parent="UILayer/HSplitContainer/List/PanelContainer/VBox/ScrollContainer/VBox/ClientEntrySimple/HBoxContainer"]
 layout_mode = 2
 
 [node name="ActionsPanel" type="PanelContainer" parent="UILayer/HSplitContainer/List/PanelContainer/VBox"]
@@ -357,3 +357,4 @@ text = "Confirmar"
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]
 [connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
 [connection signal="pressed" from="UILayer/HSplitContainer/Controls/PanelContainer/VBoxContainer/SearchOptionTable/MarginContainer/VBox/AdvancedQueryButton" to="UILayer/HSplitContainer/Controls/PanelContainer/VBoxContainer/SearchOptionTable" method="_on_advanced_query_button_pressed"]
+[connection signal="pressed" from="UILayer/HSplitContainer/List/PanelContainer/VBox/Header/HBoxContainer/RegisterNewClientButton" to="." method="_on_register_new_client_button_pressed"]

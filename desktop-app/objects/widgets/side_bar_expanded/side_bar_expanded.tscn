@@ -1,0 +1,175 @@
+[gd_scene load_steps=8 format=3 uid="uid://bn8ernl0gmjg7"]
+
+[ext_resource type="Script" uid="uid://bgp4plwrl7rl3" path="res://objects/widgets/side_bar/side_bar.gd" id="1_0fe5s"]
+[ext_resource type="Script" uid="uid://gcc477bovc31" path="res://objects/widgets/side_bar/side_bar_button.gd" id="2_3vdbf"]
+[ext_resource type="Texture2D" uid="uid://bq2m13n5vqykm" path="res://assets/icons/feather_white/home.svg" id="2_qpdoq"]
+[ext_resource type="Texture2D" uid="uid://cq740g0c1v8e2" path="res://assets/icons/feather_white/tag.svg" id="4_ltyba"]
+[ext_resource type="Texture2D" uid="uid://ce1k6dmkmpuk3" path="res://assets/icons/feather_white/package.svg" id="5_gl8uf"]
+[ext_resource type="Texture2D" uid="uid://cctih0qxtd313" path="res://assets/icons/feather_white/users.svg" id="6_cyf2b"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3vdbf"]
+
+[node name="SideBarExpanded" type="MarginContainer" node_paths=PackedStringArray("button_list")]
+clip_contents = true
+custom_minimum_size = Vector2(200, 0)
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_right = 0
+script = ExtResource("1_0fe5s")
+button_list = NodePath("ButtonList/ScrollContainer/VBoxButtonList")
+
+[node name="ButtonList" type="PanelContainer" parent="."]
+clip_contents = true
+layout_mode = 2
+theme_type_variation = &"NoShadowPanelContainer"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ButtonList"]
+layout_mode = 2
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+
+[node name="VBoxButtonList" type="VBoxContainer" parent="ButtonList/ScrollContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Menu" type="Button" parent="ButtonList/ScrollContainer/VBoxButtonList"]
+modulate = Color(1, 1, 1, 0.5882353)
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+flat = true
+icon_alignment = 1
+script = ExtResource("2_3vdbf")
+destiny_scene_name = "MainMenu"
+metadata/_custom_type_script = "uid://gcc477bovc31"
+
+[node name="HBox" type="HBoxContainer" parent="ButtonList/ScrollContainer/VBoxButtonList/Menu"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="ButtonList/ScrollContainer/VBoxButtonList/Menu/HBox"]
+layout_mode = 2
+texture = ExtResource("2_qpdoq")
+expand_mode = 3
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="ButtonList/ScrollContainer/VBoxButtonList/Menu/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Menu"
+label_settings = SubResource("LabelSettings_3vdbf")
+horizontal_alignment = 1
+
+[node name="Produtos" type="Button" parent="ButtonList/ScrollContainer/VBoxButtonList"]
+modulate = Color(1, 1, 1, 0.5882353)
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+flat = true
+icon_alignment = 1
+script = ExtResource("2_3vdbf")
+destiny_scene_name = "ProductMenu"
+metadata/_custom_type_script = "uid://gcc477bovc31"
+
+[node name="HBox" type="HBoxContainer" parent="ButtonList/ScrollContainer/VBoxButtonList/Produtos"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="ButtonList/ScrollContainer/VBoxButtonList/Produtos/HBox"]
+layout_mode = 2
+texture = ExtResource("4_ltyba")
+expand_mode = 3
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="ButtonList/ScrollContainer/VBoxButtonList/Produtos/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Produtos"
+label_settings = SubResource("LabelSettings_3vdbf")
+horizontal_alignment = 1
+
+[node name="Pedidos" type="Button" parent="ButtonList/ScrollContainer/VBoxButtonList"]
+modulate = Color(1, 1, 1, 0.5882353)
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+flat = true
+icon_alignment = 1
+script = ExtResource("2_3vdbf")
+destiny_scene_name = "OrderMenu"
+metadata/_custom_type_script = "uid://gcc477bovc31"
+
+[node name="HBox" type="HBoxContainer" parent="ButtonList/ScrollContainer/VBoxButtonList/Pedidos"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="ButtonList/ScrollContainer/VBoxButtonList/Pedidos/HBox"]
+layout_mode = 2
+texture = ExtResource("5_gl8uf")
+expand_mode = 3
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="ButtonList/ScrollContainer/VBoxButtonList/Pedidos/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Pedidos"
+label_settings = SubResource("LabelSettings_3vdbf")
+horizontal_alignment = 1
+
+[node name="Clientes" type="Button" parent="ButtonList/ScrollContainer/VBoxButtonList"]
+modulate = Color(1, 1, 1, 0.5882353)
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+flat = true
+icon_alignment = 1
+script = ExtResource("2_3vdbf")
+destiny_scene_name = "ClientsMenu"
+metadata/_custom_type_script = "uid://gcc477bovc31"
+
+[node name="HBox" type="HBoxContainer" parent="ButtonList/ScrollContainer/VBoxButtonList/Clientes"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="ButtonList/ScrollContainer/VBoxButtonList/Clientes/HBox"]
+layout_mode = 2
+texture = ExtResource("6_cyf2b")
+expand_mode = 3
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="ButtonList/ScrollContainer/VBoxButtonList/Clientes/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Clientes"
+label_settings = SubResource("LabelSettings_3vdbf")
+horizontal_alignment = 1
+
+[node name="HS1" type="HSeparator" parent="ButtonList/ScrollContainer/VBoxButtonList"]
+layout_mode = 2
+size_flags_vertical = 3

@@ -1,11 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://cbsqrfhkf7bha"]
+[gd_scene load_steps=15 format=3 uid="uid://cbsqrfhkf7bha"]
 
 [ext_resource type="Script" uid="uid://b35gq6opv4xij" path="res://scenes/order_menu/order_menu.gd" id="2_1i4pp"]
 [ext_resource type="PackedScene" uid="uid://bn20t5o34hvne" path="res://objects/widgets/side_bar/side_bar.tscn" id="3_7gfl6"]
-[ext_resource type="StyleBox" uid="uid://big45rb2if1ur" path="res://assets/theme/StyleBox/FlatGray.tres" id="4_k7pfq"]
 [ext_resource type="PackedScene" uid="uid://dji35hojk55tv" path="res://objects/widgets/order_entry/order_entry.tscn" id="5_dwq5n"]
 [ext_resource type="FontFile" uid="uid://dhrpsw2sxvt54" path="res://assets/fonts/GlacialIndifference/GlacialIndifference-Bold.otf" id="5_igiaf"]
-[ext_resource type="Texture2D" uid="uid://nqg80gxcfwtd" path="res://assets/icons/feather_white/arrow-left.svg" id="6_65wt0"]
 [ext_resource type="FontFile" uid="uid://c6tj3eanoimrj" path="res://assets/fonts/GlacialIndifference/GlacialIndifference-Regular.otf" id="6_ea12n"]
 [ext_resource type="PackedScene" uid="uid://ve73vtd268ej" path="res://objects/widgets/order_item_entry/order_item_entry.tscn" id="7_tcsiw"]
 [ext_resource type="Texture2D" uid="uid://48pf3vyc5at4" path="res://assets/icons/feather_white/plus.svg" id="7_xisy5"]
@@ -24,9 +22,6 @@ font_size = 14
 
 [sub_resource type="LabelSettings" id="LabelSettings_1648y"]
 font_size = 14
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1i4pp"]
-bg_color = Color(0, 0, 0, 0.25882354)
 
 [sub_resource type="LabelSettings" id="LabelSettings_xisy5"]
 font = ExtResource("6_ea12n")
@@ -87,8 +82,9 @@ layout_mode = 2
 [node name="HSplitContainer" type="HSplitContainer" parent="UILayer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+split_offset = 400
 
-[node name="ProductListContainer" type="MarginContainer" parent="UILayer/HBoxContainer/HSplitContainer"]
+[node name="OrderListContainer" type="MarginContainer" parent="UILayer/HBoxContainer/HSplitContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
@@ -97,15 +93,14 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 20
 
-[node name="VBox" type="VBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductListContainer"]
+[node name="VBox" type="VBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderListContainer"]
 layout_mode = 2
 
-[node name="TitleBar" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductListContainer/VBox"]
+[node name="TitleBar" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderListContainer/VBox"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
-theme_override_styles/panel = ExtResource("4_k7pfq")
 
-[node name="TitleLabel" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ProductListContainer/VBox/TitleBar"]
+[node name="TitleLabel" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/OrderListContainer/VBox/TitleBar"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -114,46 +109,42 @@ label_settings = SubResource("LabelSettings_kxfrq")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Exit" type="Button" parent="UILayer/HBoxContainer/HSplitContainer/ProductListContainer/VBox/TitleBar/TitleLabel"]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 8.0
-grow_vertical = 2
-icon = ExtResource("6_65wt0")
-
-[node name="HS1" type="HSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ProductListContainer/VBox"]
+[node name="HS1" type="HSeparator" parent="UILayer/HBoxContainer/HSplitContainer/OrderListContainer/VBox"]
 layout_mode = 2
 
-[node name="List" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductListContainer/VBox"]
+[node name="List" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderListContainer/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/panel = ExtResource("4_k7pfq")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductListContainer/VBox/List"]
+[node name="ScrollContainer" type="ScrollContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderListContainer/VBox/List"]
 layout_mode = 2
 
-[node name="VBoxEntries" type="VBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductListContainer/VBox/List/ScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="OrderEntry" parent="UILayer/HBoxContainer/HSplitContainer/ProductListContainer/VBox/List/ScrollContainer/VBoxEntries" instance=ExtResource("5_dwq5n")]
-layout_mode = 2
-
-[node name="ProductEditContainer" type="MarginContainer" parent="UILayer/HBoxContainer/HSplitContainer"]
+[node name="VBoxEntries" type="VBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderListContainer/VBox/List/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/margin_left = 20
+
+[node name="HSeparator" type="HSeparator" parent="UILayer/HBoxContainer/HSplitContainer/OrderListContainer/VBox/List/ScrollContainer/VBoxEntries"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="OrderEntry" parent="UILayer/HBoxContainer/HSplitContainer/OrderListContainer/VBox/List/ScrollContainer/VBoxEntries" instance=ExtResource("5_dwq5n")]
+layout_mode = 2
+
+[node name="OrderEditContainer" type="MarginContainer" parent="UILayer/HBoxContainer/HSplitContainer"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
 theme_override_constants/margin_bottom = 20
 
-[node name="TabContainer" type="TabContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer"]
+[node name="TabContainer" type="TabContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer"]
 layout_mode = 2
 current_tab = 0
 all_tabs_in_front = true
 drag_to_rearrange_enabled = true
 use_hidden_tabs_for_min_size = true
 
-[node name="Pedido #000000" type="MarginContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer"]
+[node name="Pedido #000000" type="MarginContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
@@ -161,136 +152,126 @@ theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 metadata/_tab_index = 0
 
-[node name="ScrollContainer" type="ScrollContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000"]
+[node name="ScrollContainer" type="ScrollContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000"]
 layout_mode = 2
 
-[node name="VBox" type="VBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer"]
+[node name="VBox" type="VBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="WindowTitle" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox"]
+[node name="WindowTitle" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 text = "Editar Pedido"
 label_settings = SubResource("LabelSettings_u43yy")
 horizontal_alignment = 1
 
-[node name="MainProperties1" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox"]
+[node name="MainProperties1" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox"]
 layout_mode = 2
 
-[node name="Name" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/MainProperties1"]
+[node name="Name" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/MainProperties1"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/MainProperties1/Name"]
+[node name="Label" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/MainProperties1/Name"]
 custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 text = "Nome do Cliente"
 label_settings = SubResource("LabelSettings_1r17f")
 vertical_alignment = 1
 
-[node name="VS" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/MainProperties1/Name"]
+[node name="VS" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/MainProperties1/Name"]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/MainProperties1/Name"]
+[node name="LineEdit" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/MainProperties1/Name"]
 custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "Client Name"
 emoji_menu_enabled = false
 
-[node name="VS" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/MainProperties1"]
+[node name="VS" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/MainProperties1"]
 layout_mode = 2
 
-[node name="Code" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/MainProperties1"]
+[node name="Code" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/MainProperties1"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/MainProperties1/Code"]
+[node name="Label" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/MainProperties1/Code"]
 custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 text = "Data "
 label_settings = SubResource("LabelSettings_1r17f")
 vertical_alignment = 1
 
-[node name="VS" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/MainProperties1/Code"]
+[node name="VS" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/MainProperties1/Code"]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/MainProperties1/Code"]
+[node name="LineEdit" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/MainProperties1/Code"]
 custom_minimum_size = Vector2(120, 35)
 layout_mode = 2
 placeholder_text = "dd/mm/aaaa"
 editable = false
 emoji_menu_enabled = false
 
-[node name="MainProperties2" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox"]
+[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/MainProperties1"]
 layout_mode = 2
 
-[node name="Name" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/MainProperties2"]
+[node name="MainProperties2" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox"]
+layout_mode = 2
+
+[node name="Registry" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/MainProperties2"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/MainProperties2/Name"]
+[node name="Label" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/MainProperties2/Registry"]
 custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
-text = "CNPJ/CPF"
+text = "Cadastro"
 label_settings = SubResource("LabelSettings_1r17f")
 vertical_alignment = 1
 
-[node name="VS" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/MainProperties2/Name"]
+[node name="VS" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/MainProperties2/Registry"]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/MainProperties2/Name"]
+[node name="SelectClientButton" type="Button" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/MainProperties2/Registry"]
 custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 size_flags_horizontal = 3
-placeholder_text = "00.000.000/0001-00"
-emoji_menu_enabled = false
+text = "▼ Selecionar cliente cadastrado"
 
-[node name="VS" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/MainProperties2"]
+[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/MainProperties2/Registry"]
 layout_mode = 2
 
-[node name="Code" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/MainProperties2"]
+[node name="Code" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/MainProperties2"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/MainProperties2/Code"]
-custom_minimum_size = Vector2(0, 35)
-layout_mode = 2
-text = "Nº Pedido"
-label_settings = SubResource("LabelSettings_1r17f")
-vertical_alignment = 1
-
-[node name="VS" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/MainProperties2/Code"]
+[node name="HS1" type="HSeparator" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox"]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/MainProperties2/Code"]
-custom_minimum_size = Vector2(120, 35)
-layout_mode = 2
-placeholder_text = "000000"
-editable = false
-emoji_menu_enabled = false
-
-[node name="HS1" type="HSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox"]
-layout_mode = 2
-
-[node name="OrderDetails" type="ScrollContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox"]
+[node name="ScrollContainer" type="ScrollContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
 follow_focus = true
 vertical_scroll_mode = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails"]
+[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="InfoBasicas" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer"]
+[node name="Tabela1" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"SolidPanelContainer"
+
+[node name="MarginContainer" type="MarginContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela1"]
+layout_mode = 2
+theme_override_constants/margin_top = 0
+
+[node name="VBox" type="VBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela1/MarginContainer"]
 layout_mode = 2
 
-[node name="VBox" type="VBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/InfoBasicas"]
-layout_mode = 2
-
-[node name="Title" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/InfoBasicas/VBox"]
+[node name="Title" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela1/MarginContainer/VBox"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_vertical = 0
@@ -299,51 +280,101 @@ label_settings = SubResource("LabelSettings_1648y")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBox" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/InfoBasicas/VBox"]
-layout_mode = 2
-alignment = 1
-
-[node name="VS1" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/InfoBasicas/VBox/HBox"]
+[node name="PropertyTable1" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela1/MarginContainer/VBox"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/InfoBasicas/VBox/HBox"]
-layout_mode = 2
-text = "Categoria do Pedido"
-
-[node name="Categoria" type="OptionButton" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/InfoBasicas/VBox/HBox"]
-layout_mode = 2
-item_count = 3
-popup/item_0/text = "Serviços"
-popup/item_0/id = 0
-popup/item_1/text = "Produtos"
-popup/item_1/id = 1
-popup/item_2/text = "Produto e Serviços"
-popup/item_2/id = 2
-
-[node name="VS3" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/InfoBasicas/VBox/HBox"]
+[node name="VBox" type="VBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela1/MarginContainer/VBox/PropertyTable1"]
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/InfoBasicas/VBox/HBox"]
+[node name="Header" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela1/MarginContainer/VBox/PropertyTable1/VBox"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
-text = "Frete (R$)"
+theme_override_styles/panel = ExtResource("8_ptbg6")
 
-[node name="Categoria2" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/InfoBasicas/VBox/HBox"]
-custom_minimum_size = Vector2(100, 0)
+[node name="HeaderLine" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela1/MarginContainer/VBox/PropertyTable1/VBox/Header"]
 layout_mode = 2
-placeholder_text = "R$200,00"
 
-[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/InfoBasicas/VBox/HBox"]
+[node name="VS1" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela1/MarginContainer/VBox/PropertyTable1/VBox/Header/HeaderLine"]
+layout_mode = 2
+
+[node name="Collum1" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela1/MarginContainer/VBox/PropertyTable1/VBox/Header/HeaderLine"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 1
+text = "Nº do pedido"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Collum2" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela1/MarginContainer/VBox/PropertyTable1/VBox/Header/HeaderLine"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Categoria do Pedido"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Itens" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer"]
+[node name="Collum3" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela1/MarginContainer/VBox/PropertyTable1/VBox/Header/HeaderLine"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 1
+text = "Frete (R$)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela1/MarginContainer/VBox/PropertyTable1/VBox/Header/HeaderLine"]
+layout_mode = 2
+
+[node name="Line1" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela1/MarginContainer/VBox/PropertyTable1/VBox"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="VS1" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela1/MarginContainer/VBox/PropertyTable1/VBox/Line1"]
+layout_mode = 2
+
+[node name="Collum1" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela1/MarginContainer/VBox/PropertyTable1/VBox/Line1"]
+custom_minimum_size = Vector2(150, 35)
+layout_mode = 2
+placeholder_text = "000000"
+alignment = 1
+editable = false
+emoji_menu_enabled = false
+
+[node name="Collum2" type="OptionButton" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela1/MarginContainer/VBox/PropertyTable1/VBox/Line1"]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 3
+popup/item_0/text = "Produtos"
+popup/item_0/id = 0
+popup/item_1/text = "Serviços"
+popup/item_1/id = 1
+popup/item_2/text = "Produtos e Serviços"
+popup/item_2/id = 2
+
+[node name="Collum3" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela1/MarginContainer/VBox/PropertyTable1/VBox/Line1"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+placeholder_text = "240,00"
+alignment = 1
+
+[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela1/MarginContainer/VBox/PropertyTable1/VBox/Line1"]
+layout_mode = 2
+
+[node name="HS1" type="HSeparator" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela1/MarginContainer/VBox/PropertyTable1/VBox"]
+layout_mode = 2
+
+[node name="Tabela2" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_type_variation = &"SolidPanelContainer"
 
-[node name="VBox" type="VBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Itens"]
+[node name="MarginContainer" type="MarginContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela2"]
+layout_mode = 2
+theme_override_constants/margin_top = 0
+
+[node name="VBox" type="VBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela2/MarginContainer"]
 layout_mode = 2
 
-[node name="Title" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Itens/VBox"]
+[node name="Title" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela2/MarginContainer/VBox"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_vertical = 0
@@ -352,56 +383,58 @@ label_settings = SubResource("LabelSettings_1648y")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ItemListOptions" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Itens/VBox"]
+[node name="ItemListActions" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela2/MarginContainer/VBox"]
 layout_mode = 2
 alignment = 1
 
-[node name="VS1" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Itens/VBox/ItemListOptions"]
+[node name="VS1" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela2/MarginContainer/VBox/ItemListActions"]
 layout_mode = 2
 
-[node name="ActionButton" type="Button" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Itens/VBox/ItemListOptions"]
+[node name="ActionButton" type="Button" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela2/MarginContainer/VBox/ItemListActions"]
 layout_mode = 2
 text = "▼ Selecionar item"
 
-[node name="VS3" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Itens/VBox/ItemListOptions"]
+[node name="VS3" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela2/MarginContainer/VBox/ItemListActions"]
 layout_mode = 2
 
-[node name="ActionButton2" type="Button" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Itens/VBox/ItemListOptions"]
+[node name="ActionButton2" type="Button" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela2/MarginContainer/VBox/ItemListActions"]
 layout_mode = 2
 text = "Adicionar"
 icon = ExtResource("7_xisy5")
 
-[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Itens/VBox/ItemListOptions"]
+[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela2/MarginContainer/VBox/ItemListActions"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ItemListPanel" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Itens/VBox"]
+[node name="HS1" type="HSeparator" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela2/MarginContainer/VBox"]
+layout_mode = 2
+
+[node name="ItemListPanel" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela2/MarginContainer/VBox"]
+custom_minimum_size = Vector2(0, 180)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/panel = ExtResource("8_ptbg6")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Itens/VBox/ItemListPanel"]
+[node name="ScrollContainer" type="ScrollContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela2/MarginContainer/VBox/ItemListPanel"]
 layout_mode = 2
 vertical_scroll_mode = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Itens/VBox/ItemListPanel/ScrollContainer"]
+[node name="VBox" type="VBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela2/MarginContainer/VBox/ItemListPanel/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="TitleContainer" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Itens/VBox/ItemListPanel/ScrollContainer/VBoxContainer"]
+[node name="Header" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela2/MarginContainer/VBox/ItemListPanel/ScrollContainer/VBox"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_1i4pp")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Itens/VBox/ItemListPanel/ScrollContainer/VBoxContainer/TitleContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela2/MarginContainer/VBox/ItemListPanel/ScrollContainer/VBox/Header"]
 layout_mode = 2
 
-[node name="VS1" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Itens/VBox/ItemListPanel/ScrollContainer/VBoxContainer/TitleContainer/HBoxContainer"]
+[node name="VS1" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela2/MarginContainer/VBox/ItemListPanel/ScrollContainer/VBox/Header/HBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 
-[node name="Code" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Itens/VBox/ItemListPanel/ScrollContainer/VBoxContainer/TitleContainer/HBoxContainer"]
+[node name="Code" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela2/MarginContainer/VBox/ItemListPanel/ScrollContainer/VBox/Header/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 1
 text = "Código"
@@ -409,13 +442,13 @@ label_settings = SubResource("LabelSettings_xisy5")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Itens/VBox/ItemListPanel/ScrollContainer/VBoxContainer/TitleContainer/HBoxContainer"]
+[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela2/MarginContainer/VBox/ItemListPanel/ScrollContainer/VBox/Header/HBoxContainer"]
 custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_styles/separator = SubResource("StyleBoxLine_ptbg6")
 
-[node name="ProductName" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Itens/VBox/ItemListPanel/ScrollContainer/VBoxContainer/TitleContainer/HBoxContainer"]
+[node name="ProductName" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela2/MarginContainer/VBox/ItemListPanel/ScrollContainer/VBox/Header/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -424,55 +457,67 @@ label_settings = SubResource("LabelSettings_xisy5")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VS3" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Itens/VBox/ItemListPanel/ScrollContainer/VBoxContainer/TitleContainer/HBoxContainer"]
+[node name="VS3" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela2/MarginContainer/VBox/ItemListPanel/ScrollContainer/VBox/Header/HBoxContainer"]
 layout_mode = 2
 
-[node name="Amount" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Itens/VBox/ItemListPanel/ScrollContainer/VBoxContainer/TitleContainer/HBoxContainer"]
+[node name="Amount" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela2/MarginContainer/VBox/ItemListPanel/ScrollContainer/VBox/Header/HBoxContainer"]
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 text = "Quant."
 horizontal_alignment = 1
 
-[node name="VS4" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Itens/VBox/ItemListPanel/ScrollContainer/VBoxContainer/TitleContainer/HBoxContainer"]
+[node name="VS4" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela2/MarginContainer/VBox/ItemListPanel/ScrollContainer/VBox/Header/HBoxContainer"]
 layout_mode = 2
 
-[node name="Amount2" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Itens/VBox/ItemListPanel/ScrollContainer/VBoxContainer/TitleContainer/HBoxContainer"]
+[node name="Amount2" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela2/MarginContainer/VBox/ItemListPanel/ScrollContainer/VBox/Header/HBoxContainer"]
 custom_minimum_size = Vector2(65, 0)
 layout_mode = 2
 text = "Unidade"
 horizontal_alignment = 1
 
-[node name="VS5" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Itens/VBox/ItemListPanel/ScrollContainer/VBoxContainer/TitleContainer/HBoxContainer"]
+[node name="VS5" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela2/MarginContainer/VBox/ItemListPanel/ScrollContainer/VBox/Header/HBoxContainer"]
 layout_mode = 2
 
-[node name="Price" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Itens/VBox/ItemListPanel/ScrollContainer/VBoxContainer/TitleContainer/HBoxContainer"]
+[node name="Price" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela2/MarginContainer/VBox/ItemListPanel/ScrollContainer/VBox/Header/HBoxContainer"]
 custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
 text = "Preço Uni."
 horizontal_alignment = 1
 
-[node name="VS6" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Itens/VBox/ItemListPanel/ScrollContainer/VBoxContainer/TitleContainer/HBoxContainer"]
+[node name="VS6" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela2/MarginContainer/VBox/ItemListPanel/ScrollContainer/VBox/Header/HBoxContainer"]
 layout_mode = 2
 
-[node name="Price2" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Itens/VBox/ItemListPanel/ScrollContainer/VBoxContainer/TitleContainer/HBoxContainer"]
+[node name="Price2" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela2/MarginContainer/VBox/ItemListPanel/ScrollContainer/VBox/Header/HBoxContainer"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "Preço Total"
 horizontal_alignment = 1
 
-[node name="VS7" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Itens/VBox/ItemListPanel/ScrollContainer/VBoxContainer/TitleContainer/HBoxContainer"]
+[node name="VS7" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela2/MarginContainer/VBox/ItemListPanel/ScrollContainer/VBox/Header/HBoxContainer"]
 layout_mode = 2
 
-[node name="OrderItemEntry" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Itens/VBox/ItemListPanel/ScrollContainer/VBoxContainer" instance=ExtResource("7_tcsiw")]
+[node name="VBox" type="VBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela2/MarginContainer/VBox/ItemListPanel/ScrollContainer/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="OrderItemEntry" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela2/MarginContainer/VBox/ItemListPanel/ScrollContainer/VBox/VBox" instance=ExtResource("7_tcsiw")]
 layout_mode = 2
 
-[node name="Valores" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer"]
+[node name="HS1" type="HSeparator" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela2/MarginContainer/VBox/ItemListPanel/ScrollContainer/VBox"]
 layout_mode = 2
 
-[node name="VBox" type="VBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Valores"]
+[node name="Tabela3" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"SolidPanelContainer"
+
+[node name="MarginContainer" type="MarginContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela3"]
+layout_mode = 2
+theme_override_constants/margin_top = 0
+
+[node name="VBox" type="VBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela3/MarginContainer"]
 layout_mode = 2
 
-[node name="Title" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Valores/VBox"]
+[node name="Title" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela3/MarginContainer/VBox"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_vertical = 0
@@ -481,104 +526,142 @@ label_settings = SubResource("LabelSettings_1648y")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBox" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Valores/VBox"]
-layout_mode = 2
-alignment = 1
-
-[node name="VS3" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Valores/VBox/HBox"]
+[node name="PropertyTable1" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela3/MarginContainer/VBox"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Valores/VBox/HBox"]
-layout_mode = 2
-text = "Custo de Produção"
-
-[node name="Custo" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Valores/VBox/HBox"]
-custom_minimum_size = Vector2(80, 0)
-layout_mode = 2
-theme_override_colors/font_uneditable_color = Color(0.5921569, 0.8862745, 0.6313726, 0.7294118)
-placeholder_text = "##,##"
-editable = false
-emoji_menu_enabled = false
-
-[node name="VS1" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Valores/VBox/HBox"]
+[node name="VBox" type="VBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela3/MarginContainer/VBox/PropertyTable1"]
 layout_mode = 2
 
-[node name="Label3" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Valores/VBox/HBox"]
+[node name="Header" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela3/MarginContainer/VBox/PropertyTable1/VBox"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
-text = "Margem de Lucro"
+theme_override_styles/panel = ExtResource("8_ptbg6")
 
-[node name="CheckBox" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Valores/VBox/HBox"]
-custom_minimum_size = Vector2(80, 0)
+[node name="HeaderLine" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela3/MarginContainer/VBox/PropertyTable1/VBox/Header"]
 layout_mode = 2
-theme_override_colors/font_uneditable_color = Color(0.5921569, 0.8862745, 0.6313726, 0.7294118)
-placeholder_text = "##,##"
-editable = false
 
-[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Valores/VBox/HBox"]
+[node name="VS1" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela3/MarginContainer/VBox/PropertyTable1/VBox/Header/HeaderLine"]
+layout_mode = 2
+
+[node name="Collum1" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela3/MarginContainer/VBox/PropertyTable1/VBox/Header/HeaderLine"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Custo de Produção"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Valores/VBox/HBox"]
+[node name="Collum2" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela3/MarginContainer/VBox/PropertyTable1/VBox/Header/HeaderLine"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Margem de Lucro"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Collum3" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela3/MarginContainer/VBox/PropertyTable1/VBox/Header/HeaderLine"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
 text = "Preço Total"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Valor" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Valores/VBox/HBox"]
-custom_minimum_size = Vector2(80, 0)
-layout_mode = 2
-theme_override_colors/font_uneditable_color = Color(0.5921569, 0.8862745, 0.6313726, 0.7294118)
-placeholder_text = "##,##"
-editable = false
-
-[node name="VS4" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Valores/VBox/HBox"]
+[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela3/MarginContainer/VBox/PropertyTable1/VBox/Header/HeaderLine"]
 layout_mode = 2
 
-[node name="HS2" type="HSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox"]
-layout_mode = 2
-
-[node name="RegisterControls" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox"]
-layout_mode = 2
-
-[node name="Line1" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/RegisterControls"]
+[node name="Line1" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela3/MarginContainer/VBox/PropertyTable1/VBox"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
-[node name="VS1" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/RegisterControls/Line1"]
+[node name="VS1" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela3/MarginContainer/VBox/PropertyTable1/VBox/Line1"]
 layout_mode = 2
 
-[node name="Collum1" type="Button" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/RegisterControls/Line1"]
+[node name="Collum1" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela3/MarginContainer/VBox/PropertyTable1/VBox/Line1"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_uneditable_color = Color(0.5921569, 0.8862745, 0.6313726, 0.7294118)
+placeholder_text = "##,##"
+alignment = 1
+editable = false
+emoji_menu_enabled = false
+
+[node name="Collum2" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela3/MarginContainer/VBox/PropertyTable1/VBox/Line1"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_uneditable_color = Color(0.5921569, 0.8862745, 0.6313726, 0.7294118)
+placeholder_text = "##,##"
+alignment = 1
+editable = false
+
+[node name="Collum3" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela3/MarginContainer/VBox/PropertyTable1/VBox/Line1"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_uneditable_color = Color(0.5921569, 0.8862745, 0.6313726, 0.7294118)
+placeholder_text = "##,##"
+alignment = 1
+editable = false
+
+[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela3/MarginContainer/VBox/PropertyTable1/VBox/Line1"]
+layout_mode = 2
+
+[node name="HS2" type="HSeparator" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela3/MarginContainer/VBox/PropertyTable1/VBox"]
+layout_mode = 2
+
+[node name="HS2" type="HSeparator" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox"]
+layout_mode = 2
+
+[node name="RegisterControls" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox"]
+layout_mode = 2
+
+[node name="Line1" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/RegisterControls"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="VS1" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/RegisterControls/Line1"]
+layout_mode = 2
+
+[node name="Collum1" type="Button" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/RegisterControls/Line1"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 text = "Cancelar"
 
-[node name="Collum2" type="Button" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/RegisterControls/Line1"]
+[node name="Collum2" type="Button" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/RegisterControls/Line1"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 text = "Exportar"
 
-[node name="VS3" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/RegisterControls/Line1"]
+[node name="VS3" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/RegisterControls/Line1"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label3" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/RegisterControls/Line1"]
+[node name="ConfirmSale" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/RegisterControls/Line1"]
+layout_mode = 2
+mouse_filter = 0
+
+[node name="Label" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/RegisterControls/Line1/ConfirmSale"]
 layout_mode = 2
 size_flags_horizontal = 8
+mouse_filter = 0
 text = "Confirmar venda"
 
-[node name="CheckBox" type="CheckBox" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/RegisterControls/Line1"]
+[node name="CheckButton" type="CheckButton" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/RegisterControls/Line1/ConfirmSale"]
 layout_mode = 2
 size_flags_horizontal = 8
-theme_override_colors/checkbox_checked_color = Color(0.7090821, 0.76594245, 0, 1)
 
-[node name="Collum3" type="Button" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/RegisterControls/Line1"]
+[node name="Collum3" type="Button" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/RegisterControls/Line1"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 8
 text = "Salvar"
 
-[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/RegisterControls/Line1"]
+[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/RegisterControls/Line1"]
 layout_mode = 2
 
-[connection signal="pressed" from="UILayer/HBoxContainer/HSplitContainer/ProductListContainer/VBox/TitleBar/TitleLabel/Exit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/OrderDetails/VBoxContainer/Itens/VBox/ItemListOptions/ActionButton" to="." method="_on_select_order_item_pressed"]
+[connection signal="pressed" from="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/MainProperties2/Registry/SelectClientButton" to="." method="_on_select_client_button_pressed"]
+[connection signal="pressed" from="UILayer/HBoxContainer/HSplitContainer/OrderEditContainer/TabContainer/Pedido #000000/ScrollContainer/VBox/ScrollContainer/VBoxContainer/Tabela2/MarginContainer/VBox/ItemListActions/ActionButton" to="." method="_on_select_order_item_pressed"]

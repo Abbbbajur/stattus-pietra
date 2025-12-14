@@ -1,4 +1,5 @@
 extends MarginContainer
+class_name SideBar
 
 @export var button_list: VBoxContainer
 var buttons: Array[SideBarButton]

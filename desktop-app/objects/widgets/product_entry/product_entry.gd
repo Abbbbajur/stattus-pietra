@@ -1,4 +1,4 @@
-extends Panel
+extends PanelContainer
 class_name ProductEntry
 
 @export var dropdown_menu: PackedScene

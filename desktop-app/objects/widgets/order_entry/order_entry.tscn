@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dji35hojk55tv"]
+[gd_scene load_steps=8 format=3 uid="uid://dji35hojk55tv"]
 
 [ext_resource type="Script" uid="uid://wodn8ol4njk0" path="res://objects/widgets/order_entry/order_entry.gd" id="1_3wsmf"]
 [ext_resource type="PackedScene" uid="uid://doqj14vdd6ncp" path="res://objects/widgets/order_entry/order_entry_drop_down.tscn" id="2_dt1ac"]
@@ -7,41 +7,20 @@
 [ext_resource type="Texture2D" uid="uid://bypyeavo4xawl" path="res://assets/icons/feather_white/edit.svg" id="5_ucl7w"]
 [ext_resource type="Texture2D" uid="uid://bhwhelqkkgseg" path="res://assets/icons/feather_white/menu.svg" id="6_gnavc"]
 
-[sub_resource type="Gradient" id="Gradient_25nw1"]
-interpolation_mode = 2
-colors = PackedColorArray(0.16383225, 0.19435415, 0.16106632, 1, 0.2627451, 0.30588236, 0.25882354, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_r7lly"]
-gradient = SubResource("Gradient_25nw1")
-fill_from = Vector2(0.5, 1)
-fill_to = Vector2(0.5, 0)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kxfrq"]
-texture = SubResource("GradientTexture2D_r7lly")
-texture_margin_left = 5.0
-texture_margin_top = 5.0
-texture_margin_right = 5.0
-texture_margin_bottom = 5.0
-
 [sub_resource type="LabelSettings" id="LabelSettings_awg16"]
 font = ExtResource("4_uv2s8")
 
-[node name="OrderEntry" type="Panel"]
+[node name="OrderEntry" type="PanelContainer"]
 custom_minimum_size = Vector2(0, 40)
 offset_left = -308.0
 offset_right = 308.0
-offset_bottom = 40.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_kxfrq")
+offset_bottom = 42.0
+theme_type_variation = &"SolidPanelContainer"
 script = ExtResource("1_3wsmf")
 dropdown_menu = ExtResource("2_dt1ac")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 alignment = 1
 
 [node name="Details" type="HBoxContainer" parent="VBoxContainer"]
