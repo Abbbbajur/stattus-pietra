@@ -29,7 +29,7 @@ Core="*res://objects/singletons/core.gd"
 
 [display]
 
-window/size/viewport_width=1280
+window/size/viewport_width=1360
 window/size/viewport_height=720
 
 [dotnet]

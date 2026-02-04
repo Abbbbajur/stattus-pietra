@@ -1,12 +1,15 @@
-[gd_scene load_steps=13 format=3 uid="uid://v4ovmsqs7ce6"]
+[gd_scene load_steps=16 format=3 uid="uid://v4ovmsqs7ce6"]
 
 [ext_resource type="Theme" uid="uid://cwqm4buus4nki" path="res://assets/theme/green_flat_theme.tres" id="1_xil34"]
 [ext_resource type="Script" uid="uid://dld2bxudflnno" path="res://scenes/clients_menu/clients_menu.gd" id="2_fcubx"]
 [ext_resource type="PackedScene" uid="uid://bn20t5o34hvne" path="res://objects/widgets/side_bar/side_bar.tscn" id="3_fcubx"]
 [ext_resource type="FontFile" uid="uid://dhrpsw2sxvt54" path="res://assets/fonts/GlacialIndifference/GlacialIndifference-Bold.otf" id="5_yj5ad"]
 [ext_resource type="PackedScene" uid="uid://burt3upaupv8x" path="res://objects/widgets/client_entry/client_entry.tscn" id="6_fcubx"]
+[ext_resource type="Script" uid="uid://cyeie1fabb72x" path="res://objects/widgets/form_fields/form_line_edit.gd" id="6_t4bxg"]
 [ext_resource type="StyleBox" uid="uid://dn3tb00831a12" path="res://assets/theme/StyleBox/dark_transparent.tres" id="8_jsv1v"]
+[ext_resource type="Script" uid="uid://kk58dbd7iqbf" path="res://objects/widgets/form_fields/form_option_button.gd" id="8_pso1t"]
 [ext_resource type="Texture2D" uid="uid://c1xmt84xrai4a" path="res://assets/icons/feather_white/arrow-up-right.svg" id="8_xil34"]
+[ext_resource type="Script" uid="uid://cmwm7r3fekdpd" path="res://objects/widgets/form_fields/form_select_button.gd" id="10_uyh4d"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_kxfrq"]
 font = ExtResource("5_yj5ad")
@@ -161,130 +164,138 @@ text = "Editar cliente"
 label_settings = SubResource("LabelSettings_u43yy")
 horizontal_alignment = 1
 
-[node name="MainProperties1" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox"]
-layout_mode = 2
-
-[node name="Name" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/MainProperties1"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/MainProperties1/Name"]
-custom_minimum_size = Vector2(0, 35)
-layout_mode = 2
-text = "Razão Social"
-label_settings = SubResource("LabelSettings_1r17f")
-vertical_alignment = 1
-
-[node name="VS" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/MainProperties1/Name"]
-layout_mode = 2
-
-[node name="LineEdit" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/MainProperties1/Name"]
-custom_minimum_size = Vector2(0, 35)
-layout_mode = 2
-size_flags_horizontal = 3
-placeholder_text = "Client Name"
-emoji_menu_enabled = false
-
-[node name="VS" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/MainProperties1"]
-layout_mode = 2
-
-[node name="Code" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/MainProperties1"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/MainProperties1/Code"]
-custom_minimum_size = Vector2(0, 35)
-layout_mode = 2
-text = "Código ID"
-label_settings = SubResource("LabelSettings_1r17f")
-vertical_alignment = 1
-
-[node name="VS" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/MainProperties1/Code"]
-layout_mode = 2
-
-[node name="LineEdit" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/MainProperties1/Code"]
-custom_minimum_size = Vector2(120, 35)
-layout_mode = 2
-placeholder_text = "000000"
-emoji_menu_enabled = false
-
-[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/MainProperties1"]
-layout_mode = 2
-
-[node name="MainProperties2" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox"]
-layout_mode = 2
-
-[node name="Name" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/MainProperties2"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/MainProperties2/Name"]
-custom_minimum_size = Vector2(0, 35)
-layout_mode = 2
-text = "CPF/CNPJ"
-label_settings = SubResource("LabelSettings_1r17f")
-vertical_alignment = 1
-
-[node name="VS" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/MainProperties2/Name"]
-layout_mode = 2
-
-[node name="LineEdit" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/MainProperties2/Name"]
-custom_minimum_size = Vector2(0, 35)
-layout_mode = 2
-size_flags_horizontal = 3
-placeholder_text = "00.000.000/0001-00"
-emoji_menu_enabled = false
-
-[node name="VS" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/MainProperties2"]
-layout_mode = 2
-
-[node name="Code" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/MainProperties2"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/MainProperties2/Code"]
-custom_minimum_size = Vector2(0, 35)
-layout_mode = 2
-text = "Data de Cadastro"
-label_settings = SubResource("LabelSettings_1r17f")
-vertical_alignment = 1
-
-[node name="VS" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/MainProperties2/Code"]
-layout_mode = 2
-
-[node name="LineEdit" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/MainProperties2/Code"]
-custom_minimum_size = Vector2(120, 35)
-layout_mode = 2
-placeholder_text = "dd/mm/aaaa"
-emoji_menu_enabled = false
-
-[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/MainProperties2"]
-layout_mode = 2
-
-[node name="HS1" type="HSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox"]
-layout_mode = 2
-
 [node name="ScrollContainer" type="ScrollContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
 follow_focus = true
 vertical_scroll_mode = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer"]
+[node name="VBox" type="VBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Tabelas1" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer"]
+[node name="MainProperties1" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox"]
+layout_mode = 2
+
+[node name="Name" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/MainProperties1"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/MainProperties1/Name"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+text = "Razão Social"
+label_settings = SubResource("LabelSettings_1r17f")
+vertical_alignment = 1
+
+[node name="VS" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/MainProperties1/Name"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/MainProperties1/Name"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Client Name"
+emoji_menu_enabled = false
+script = ExtResource("6_t4bxg")
+metadata/_custom_type_script = "uid://cyeie1fabb72x"
+
+[node name="VS" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/MainProperties1"]
+layout_mode = 2
+
+[node name="Code" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/MainProperties1"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/MainProperties1/Code"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+text = "Código ID"
+label_settings = SubResource("LabelSettings_1r17f")
+vertical_alignment = 1
+
+[node name="VS" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/MainProperties1/Code"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/MainProperties1/Code"]
+custom_minimum_size = Vector2(120, 35)
+layout_mode = 2
+placeholder_text = "000000"
+emoji_menu_enabled = false
+script = ExtResource("6_t4bxg")
+metadata/_custom_type_script = "uid://cyeie1fabb72x"
+
+[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/MainProperties1"]
+layout_mode = 2
+
+[node name="MainProperties2" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox"]
+layout_mode = 2
+
+[node name="Name" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/MainProperties2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/MainProperties2/Name"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+text = "CPF/CNPJ"
+label_settings = SubResource("LabelSettings_1r17f")
+vertical_alignment = 1
+
+[node name="VS" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/MainProperties2/Name"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/MainProperties2/Name"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "00.000.000/0001-00"
+emoji_menu_enabled = false
+script = ExtResource("6_t4bxg")
+metadata/_custom_type_script = "uid://cyeie1fabb72x"
+
+[node name="VS" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/MainProperties2"]
+layout_mode = 2
+
+[node name="Code" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/MainProperties2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/MainProperties2/Code"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+text = "Data de Cadastro"
+label_settings = SubResource("LabelSettings_1r17f")
+vertical_alignment = 1
+
+[node name="VS" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/MainProperties2/Code"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/MainProperties2/Code"]
+custom_minimum_size = Vector2(120, 35)
+layout_mode = 2
+placeholder_text = "dd/mm/aaaa"
+emoji_menu_enabled = false
+script = ExtResource("6_t4bxg")
+metadata/_custom_type_script = "uid://cyeie1fabb72x"
+
+[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/MainProperties2"]
+layout_mode = 2
+
+[node name="HS1" type="HSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox"]
+layout_mode = 2
+
+[node name="Tabelas1" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox"]
 layout_mode = 2
 theme_type_variation = &"SolidPanelContainer"
 
-[node name="MarginContainer" type="MarginContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas1"]
+[node name="MarginContainer" type="MarginContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas1"]
 layout_mode = 2
 theme_override_constants/margin_top = 0
 
-[node name="VBox" type="VBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas1/MarginContainer"]
+[node name="VBox" type="VBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas1/MarginContainer"]
 layout_mode = 2
 
-[node name="Title" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas1/MarginContainer/VBox"]
+[node name="Title" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas1/MarginContainer/VBox"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_vertical = 0
@@ -293,27 +304,27 @@ label_settings = SubResource("LabelSettings_1648y")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PropertyTable1" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas1/MarginContainer/VBox"]
+[node name="PropertyTable1" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas1/MarginContainer/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = ExtResource("8_jsv1v")
 
-[node name="VBox" type="VBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas1/MarginContainer/VBox/PropertyTable1"]
+[node name="VBox" type="VBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas1/MarginContainer/VBox/PropertyTable1"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Header" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox"]
+[node name="Header" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_styles/panel = ExtResource("8_jsv1v")
 
-[node name="HeaderLine" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Header"]
+[node name="HeaderLine" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Header"]
 layout_mode = 2
 
-[node name="VS1" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Header/HeaderLine"]
+[node name="VS1" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Header/HeaderLine"]
 layout_mode = 2
 
-[node name="Collum1" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Header/HeaderLine"]
+[node name="Collum1" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Header/HeaderLine"]
 custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 size_flags_vertical = 1
@@ -321,7 +332,7 @@ text = "CEP"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Collum2" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Header/HeaderLine"]
+[node name="Collum2" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Header/HeaderLine"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -329,7 +340,7 @@ text = "Logradouro"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Collum3" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Header/HeaderLine"]
+[node name="Collum3" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Header/HeaderLine"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_vertical = 1
@@ -337,46 +348,52 @@ text = "Número"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Header/HeaderLine"]
+[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Header/HeaderLine"]
 layout_mode = 2
 
-[node name="Line1" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox"]
+[node name="Line1" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
-[node name="VS1" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Line1"]
+[node name="VS1" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Line1"]
 layout_mode = 2
 
-[node name="Collum1" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Line1"]
+[node name="Collum1" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Line1"]
 custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 alignment = 1
+script = ExtResource("6_t4bxg")
+metadata/_custom_type_script = "uid://cyeie1fabb72x"
 
-[node name="Collum2" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Line1"]
+[node name="Collum2" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Line1"]
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
+script = ExtResource("6_t4bxg")
+metadata/_custom_type_script = "uid://cyeie1fabb72x"
 
-[node name="Collum3" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Line1"]
+[node name="Collum3" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Line1"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 alignment = 1
+script = ExtResource("6_t4bxg")
+metadata/_custom_type_script = "uid://cyeie1fabb72x"
 
-[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Line1"]
+[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Line1"]
 layout_mode = 2
 
-[node name="Header2" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox"]
+[node name="Header2" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_styles/panel = ExtResource("8_jsv1v")
 
-[node name="HeaderLine" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Header2"]
+[node name="HeaderLine" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Header2"]
 layout_mode = 2
 
-[node name="VS1" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Header2/HeaderLine"]
+[node name="VS1" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Header2/HeaderLine"]
 layout_mode = 2
 
-[node name="Collum1" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Header2/HeaderLine"]
+[node name="Collum1" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Header2/HeaderLine"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -384,7 +401,7 @@ text = "Bairro"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Collum2" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Header2/HeaderLine"]
+[node name="Collum2" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Header2/HeaderLine"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -392,7 +409,7 @@ text = "Cidade"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Collum3" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Header2/HeaderLine"]
+[node name="Collum3" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Header2/HeaderLine"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_vertical = 1
@@ -400,28 +417,32 @@ text = "Estado"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Header2/HeaderLine"]
+[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Header2/HeaderLine"]
 layout_mode = 2
 
-[node name="Line2" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox"]
+[node name="Line2" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
-[node name="VS1" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Line2"]
+[node name="VS1" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Line2"]
 layout_mode = 2
 
-[node name="Collum1" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Line2"]
+[node name="Collum1" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Line2"]
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
+script = ExtResource("6_t4bxg")
+metadata/_custom_type_script = "uid://cyeie1fabb72x"
 
-[node name="Collum2" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Line2"]
+[node name="Collum2" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Line2"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_uneditable_color = Color(1, 0.5431655, 0.51258636, 0.7294118)
 alignment = 1
+script = ExtResource("6_t4bxg")
+metadata/_custom_type_script = "uid://cyeie1fabb72x"
 
-[node name="Collum3" type="OptionButton" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Line2"]
+[node name="Collum3" type="OptionButton" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Line2"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 item_count = 27
@@ -479,25 +500,27 @@ popup/item_25/text = "SE"
 popup/item_25/id = 25
 popup/item_26/text = "TO"
 popup/item_26/id = 26
+script = ExtResource("8_pso1t")
+metadata/_custom_type_script = "uid://kk58dbd7iqbf"
 
-[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Line2"]
+[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Line2"]
 layout_mode = 2
 
-[node name="HS2" type="HSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox"]
+[node name="HS2" type="HSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox"]
 layout_mode = 2
 
-[node name="Tabelas2" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer"]
+[node name="Tabelas2" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox"]
 layout_mode = 2
 theme_type_variation = &"SolidPanelContainer"
 
-[node name="MarginContainer" type="MarginContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas2"]
+[node name="MarginContainer" type="MarginContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas2"]
 layout_mode = 2
 theme_override_constants/margin_top = 0
 
-[node name="VBox" type="VBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas2/MarginContainer"]
+[node name="VBox" type="VBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas2/MarginContainer"]
 layout_mode = 2
 
-[node name="Title" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas2/MarginContainer/VBox"]
+[node name="Title" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas2/MarginContainer/VBox"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_vertical = 0
@@ -506,27 +529,27 @@ label_settings = SubResource("LabelSettings_1648y")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PropertyTable1" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas2/MarginContainer/VBox"]
+[node name="PropertyTable1" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas2/MarginContainer/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = ExtResource("8_jsv1v")
 
-[node name="VBox" type="VBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas2/MarginContainer/VBox/PropertyTable1"]
+[node name="VBox" type="VBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas2/MarginContainer/VBox/PropertyTable1"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Header" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas2/MarginContainer/VBox/PropertyTable1/VBox"]
+[node name="Header" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas2/MarginContainer/VBox/PropertyTable1/VBox"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_styles/panel = ExtResource("8_jsv1v")
 
-[node name="HeaderLine" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas2/MarginContainer/VBox/PropertyTable1/VBox/Header"]
+[node name="HeaderLine" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas2/MarginContainer/VBox/PropertyTable1/VBox/Header"]
 layout_mode = 2
 
-[node name="VS1" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas2/MarginContainer/VBox/PropertyTable1/VBox/Header/HeaderLine"]
+[node name="VS1" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas2/MarginContainer/VBox/PropertyTable1/VBox/Header/HeaderLine"]
 layout_mode = 2
 
-[node name="Collum1" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas2/MarginContainer/VBox/PropertyTable1/VBox/Header/HeaderLine"]
+[node name="Collum1" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas2/MarginContainer/VBox/PropertyTable1/VBox/Header/HeaderLine"]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_vertical = 1
@@ -534,7 +557,7 @@ text = "Telefone 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Collum2" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas2/MarginContainer/VBox/PropertyTable1/VBox/Header/HeaderLine"]
+[node name="Collum2" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas2/MarginContainer/VBox/PropertyTable1/VBox/Header/HeaderLine"]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_vertical = 1
@@ -542,7 +565,7 @@ text = "Telefone 2"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Collum3" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas2/MarginContainer/VBox/PropertyTable1/VBox/Header/HeaderLine"]
+[node name="Collum3" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas2/MarginContainer/VBox/PropertyTable1/VBox/Header/HeaderLine"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -551,80 +574,92 @@ text = "Endereço(s) de Email"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas2/MarginContainer/VBox/PropertyTable1/VBox/Header/HeaderLine"]
+[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas2/MarginContainer/VBox/PropertyTable1/VBox/Header/HeaderLine"]
 layout_mode = 2
 
-[node name="Line1" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas2/MarginContainer/VBox/PropertyTable1/VBox"]
+[node name="Line1" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas2/MarginContainer/VBox/PropertyTable1/VBox"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
-[node name="VS1" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas2/MarginContainer/VBox/PropertyTable1/VBox/Line1"]
+[node name="VS1" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas2/MarginContainer/VBox/PropertyTable1/VBox/Line1"]
 layout_mode = 2
 
-[node name="Collum1" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas2/MarginContainer/VBox/PropertyTable1/VBox/Line1"]
+[node name="Collum1" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas2/MarginContainer/VBox/PropertyTable1/VBox/Line1"]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 placeholder_text = "(00) 90000-0000"
 alignment = 1
+script = ExtResource("6_t4bxg")
+metadata/_custom_type_script = "uid://cyeie1fabb72x"
 
-[node name="Collum2" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas2/MarginContainer/VBox/PropertyTable1/VBox/Line1"]
+[node name="Collum2" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas2/MarginContainer/VBox/PropertyTable1/VBox/Line1"]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 placeholder_text = "(00) 0000-0000"
 alignment = 1
+script = ExtResource("6_t4bxg")
+metadata/_custom_type_script = "uid://cyeie1fabb72x"
 
-[node name="Collum3" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas2/MarginContainer/VBox/PropertyTable1/VBox/Line1"]
+[node name="Collum3" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas2/MarginContainer/VBox/PropertyTable1/VBox/Line1"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
+script = ExtResource("6_t4bxg")
+metadata/_custom_type_script = "uid://cyeie1fabb72x"
 
-[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas2/MarginContainer/VBox/PropertyTable1/VBox/Line1"]
+[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas2/MarginContainer/VBox/PropertyTable1/VBox/Line1"]
 layout_mode = 2
 
-[node name="Line2" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas2/MarginContainer/VBox/PropertyTable1/VBox"]
+[node name="Line2" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas2/MarginContainer/VBox/PropertyTable1/VBox"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
-[node name="VS1" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas2/MarginContainer/VBox/PropertyTable1/VBox/Line2"]
+[node name="VS1" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas2/MarginContainer/VBox/PropertyTable1/VBox/Line2"]
 layout_mode = 2
 
-[node name="Collum1" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas2/MarginContainer/VBox/PropertyTable1/VBox/Line2"]
+[node name="Collum1" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas2/MarginContainer/VBox/PropertyTable1/VBox/Line2"]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 placeholder_text = "Nome tel 1"
 alignment = 1
+script = ExtResource("6_t4bxg")
+metadata/_custom_type_script = "uid://cyeie1fabb72x"
 
-[node name="Collum2" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas2/MarginContainer/VBox/PropertyTable1/VBox/Line2"]
+[node name="Collum2" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas2/MarginContainer/VBox/PropertyTable1/VBox/Line2"]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 placeholder_text = "Nome tel 2"
 alignment = 1
+script = ExtResource("6_t4bxg")
+metadata/_custom_type_script = "uid://cyeie1fabb72x"
 
-[node name="Collum3" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas2/MarginContainer/VBox/PropertyTable1/VBox/Line2"]
+[node name="Collum3" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas2/MarginContainer/VBox/PropertyTable1/VBox/Line2"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
+script = ExtResource("6_t4bxg")
+metadata/_custom_type_script = "uid://cyeie1fabb72x"
 
-[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas2/MarginContainer/VBox/PropertyTable1/VBox/Line2"]
+[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas2/MarginContainer/VBox/PropertyTable1/VBox/Line2"]
 layout_mode = 2
 
-[node name="HS2" type="HSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas2/MarginContainer/VBox/PropertyTable1/VBox"]
+[node name="HS2" type="HSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas2/MarginContainer/VBox/PropertyTable1/VBox"]
 layout_mode = 2
 
-[node name="Tabelas3" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer"]
+[node name="Tabelas3" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox"]
 layout_mode = 2
 theme_type_variation = &"SolidPanelContainer"
 
-[node name="MarginContainer" type="MarginContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas3"]
+[node name="MarginContainer" type="MarginContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas3"]
 layout_mode = 2
 theme_override_constants/margin_top = 0
 
-[node name="VBox" type="VBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas3/MarginContainer"]
+[node name="VBox" type="VBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas3/MarginContainer"]
 layout_mode = 2
 
-[node name="Title" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas3/MarginContainer/VBox"]
+[node name="Title" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas3/MarginContainer/VBox"]
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 size_flags_vertical = 0
@@ -633,7 +668,7 @@ label_settings = SubResource("LabelSettings_1648y")
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="Title2" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas3/MarginContainer/VBox"]
+[node name="Title2" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas3/MarginContainer/VBox"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_vertical = 0
@@ -641,27 +676,27 @@ text = "Preenchimento opicional de acordo com o tipo de cliente."
 label_settings = SubResource("LabelSettings_fcubx")
 horizontal_alignment = 1
 
-[node name="PropertyTable2" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas3/MarginContainer/VBox"]
+[node name="PropertyTable2" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas3/MarginContainer/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = ExtResource("8_jsv1v")
 
-[node name="VBox" type="VBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas3/MarginContainer/VBox/PropertyTable2"]
+[node name="VBox" type="VBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas3/MarginContainer/VBox/PropertyTable2"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Header" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas3/MarginContainer/VBox/PropertyTable2/VBox"]
+[node name="Header" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas3/MarginContainer/VBox/PropertyTable2/VBox"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_styles/panel = ExtResource("8_jsv1v")
 
-[node name="HeaderLine" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas3/MarginContainer/VBox/PropertyTable2/VBox/Header"]
+[node name="HeaderLine" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas3/MarginContainer/VBox/PropertyTable2/VBox/Header"]
 layout_mode = 2
 
-[node name="VS1" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas3/MarginContainer/VBox/PropertyTable2/VBox/Header/HeaderLine"]
+[node name="VS1" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas3/MarginContainer/VBox/PropertyTable2/VBox/Header/HeaderLine"]
 layout_mode = 2
 
-[node name="Collum1" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas3/MarginContainer/VBox/PropertyTable2/VBox/Header/HeaderLine"]
+[node name="Collum1" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas3/MarginContainer/VBox/PropertyTable2/VBox/Header/HeaderLine"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -669,7 +704,7 @@ text = "Inscrição Municipal"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Collum2" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas3/MarginContainer/VBox/PropertyTable2/VBox/Header/HeaderLine"]
+[node name="Collum2" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas3/MarginContainer/VBox/PropertyTable2/VBox/Header/HeaderLine"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -677,7 +712,7 @@ text = "Inscrição Estadual"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Collum3" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas3/MarginContainer/VBox/PropertyTable2/VBox/Header/HeaderLine"]
+[node name="Collum3" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas3/MarginContainer/VBox/PropertyTable2/VBox/Header/HeaderLine"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -685,7 +720,7 @@ text = "CNO"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Collum4" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas3/MarginContainer/VBox/PropertyTable2/VBox/Header/HeaderLine"]
+[node name="Collum4" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas3/MarginContainer/VBox/PropertyTable2/VBox/Header/HeaderLine"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -693,57 +728,65 @@ text = "Financeiro"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas3/MarginContainer/VBox/PropertyTable2/VBox/Header/HeaderLine"]
+[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas3/MarginContainer/VBox/PropertyTable2/VBox/Header/HeaderLine"]
 layout_mode = 2
 
-[node name="Line1" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas3/MarginContainer/VBox/PropertyTable2/VBox"]
+[node name="Line1" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas3/MarginContainer/VBox/PropertyTable2/VBox"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
-[node name="VS1" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas3/MarginContainer/VBox/PropertyTable2/VBox/Line1"]
+[node name="VS1" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas3/MarginContainer/VBox/PropertyTable2/VBox/Line1"]
 layout_mode = 2
 
-[node name="Collum1" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas3/MarginContainer/VBox/PropertyTable2/VBox/Line1"]
-layout_mode = 2
-size_flags_horizontal = 3
-alignment = 1
-
-[node name="Collum2" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas3/MarginContainer/VBox/PropertyTable2/VBox/Line1"]
+[node name="Collum1" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas3/MarginContainer/VBox/PropertyTable2/VBox/Line1"]
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
+script = ExtResource("6_t4bxg")
+metadata/_custom_type_script = "uid://cyeie1fabb72x"
 
-[node name="Collum3" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas3/MarginContainer/VBox/PropertyTable2/VBox/Line1"]
+[node name="Collum2" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas3/MarginContainer/VBox/PropertyTable2/VBox/Line1"]
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
+script = ExtResource("6_t4bxg")
+metadata/_custom_type_script = "uid://cyeie1fabb72x"
 
-[node name="Collum4" type="Button" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas3/MarginContainer/VBox/PropertyTable2/VBox/Line1"]
+[node name="Collum3" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas3/MarginContainer/VBox/PropertyTable2/VBox/Line1"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+script = ExtResource("6_t4bxg")
+metadata/_custom_type_script = "uid://cyeie1fabb72x"
+
+[node name="Collum4" type="Button" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas3/MarginContainer/VBox/PropertyTable2/VBox/Line1"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Abrir janela"
 icon = ExtResource("8_xil34")
 clip_text = true
 icon_alignment = 2
+script = ExtResource("10_uyh4d")
+metadata/_custom_type_script = "uid://cmwm7r3fekdpd"
 
-[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas3/MarginContainer/VBox/PropertyTable2/VBox/Line1"]
+[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas3/MarginContainer/VBox/PropertyTable2/VBox/Line1"]
 layout_mode = 2
 
-[node name="HS1" type="HSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas3/MarginContainer/VBox/PropertyTable2/VBox"]
+[node name="HS1" type="HSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas3/MarginContainer/VBox/PropertyTable2/VBox"]
 layout_mode = 2
 
-[node name="Tabelas4" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer"]
+[node name="Tabelas4" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox"]
 layout_mode = 2
 theme_type_variation = &"SolidPanelContainer"
 
-[node name="MarginContainer" type="MarginContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas4"]
+[node name="MarginContainer" type="MarginContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas4"]
 layout_mode = 2
 theme_override_constants/margin_top = 0
 
-[node name="VBox" type="VBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas4/MarginContainer"]
+[node name="VBox" type="VBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas4/MarginContainer"]
 layout_mode = 2
 
-[node name="Title" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas4/MarginContainer/VBox"]
+[node name="Title" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas4/MarginContainer/VBox"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_vertical = 0
@@ -752,27 +795,27 @@ label_settings = SubResource("LabelSettings_1648y")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PropertyTable2" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas4/MarginContainer/VBox"]
+[node name="PropertyTable2" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas4/MarginContainer/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = ExtResource("8_jsv1v")
 
-[node name="VBox" type="VBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas4/MarginContainer/VBox/PropertyTable2"]
+[node name="VBox" type="VBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas4/MarginContainer/VBox/PropertyTable2"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Header" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas4/MarginContainer/VBox/PropertyTable2/VBox"]
+[node name="Header" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas4/MarginContainer/VBox/PropertyTable2/VBox"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_styles/panel = ExtResource("8_jsv1v")
 
-[node name="HeaderLine" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas4/MarginContainer/VBox/PropertyTable2/VBox/Header"]
+[node name="HeaderLine" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas4/MarginContainer/VBox/PropertyTable2/VBox/Header"]
 layout_mode = 2
 
-[node name="VS1" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas4/MarginContainer/VBox/PropertyTable2/VBox/Header/HeaderLine"]
+[node name="VS1" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas4/MarginContainer/VBox/PropertyTable2/VBox/Header/HeaderLine"]
 layout_mode = 2
 
-[node name="Collum1" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas4/MarginContainer/VBox/PropertyTable2/VBox/Header/HeaderLine"]
+[node name="Collum1" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas4/MarginContainer/VBox/PropertyTable2/VBox/Header/HeaderLine"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -780,7 +823,7 @@ text = "Pedidos"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Collum2" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas4/MarginContainer/VBox/PropertyTable2/VBox/Header/HeaderLine"]
+[node name="Collum2" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas4/MarginContainer/VBox/PropertyTable2/VBox/Header/HeaderLine"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -788,7 +831,7 @@ text = "Vendas"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Collum3" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas4/MarginContainer/VBox/PropertyTable2/VBox/Header/HeaderLine"]
+[node name="Collum3" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas4/MarginContainer/VBox/PropertyTable2/VBox/Header/HeaderLine"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -796,7 +839,7 @@ text = "Comprou"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Collum4" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas4/MarginContainer/VBox/PropertyTable2/VBox/Header/HeaderLine"]
+[node name="Collum4" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas4/MarginContainer/VBox/PropertyTable2/VBox/Header/HeaderLine"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -804,17 +847,17 @@ text = "Obras"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas4/MarginContainer/VBox/PropertyTable2/VBox/Header/HeaderLine"]
+[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas4/MarginContainer/VBox/PropertyTable2/VBox/Header/HeaderLine"]
 layout_mode = 2
 
-[node name="Line1" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas4/MarginContainer/VBox/PropertyTable2/VBox"]
+[node name="Line1" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas4/MarginContainer/VBox/PropertyTable2/VBox"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
-[node name="VS1" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas4/MarginContainer/VBox/PropertyTable2/VBox/Line1"]
+[node name="VS1" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas4/MarginContainer/VBox/PropertyTable2/VBox/Line1"]
 layout_mode = 2
 
-[node name="Collum1" type="OptionButton" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas4/MarginContainer/VBox/PropertyTable2/VBox/Line1"]
+[node name="Collum1" type="OptionButton" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas4/MarginContainer/VBox/PropertyTable2/VBox/Line1"]
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
@@ -836,7 +879,7 @@ popup/item_4/id = 3
 popup/item_5/text = "Pedido 260201"
 popup/item_5/id = 4
 
-[node name="Collum2" type="OptionButton" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas4/MarginContainer/VBox/PropertyTable2/VBox/Line1"]
+[node name="Collum2" type="OptionButton" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas4/MarginContainer/VBox/PropertyTable2/VBox/Line1"]
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
@@ -846,7 +889,7 @@ item_count = 1
 popup/item_0/text = "Ver lista"
 popup/item_0/id = 0
 
-[node name="Collum3" type="OptionButton" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas4/MarginContainer/VBox/PropertyTable2/VBox/Line1"]
+[node name="Collum3" type="OptionButton" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas4/MarginContainer/VBox/PropertyTable2/VBox/Line1"]
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
@@ -856,7 +899,7 @@ item_count = 1
 popup/item_0/text = "Ver lista"
 popup/item_0/id = 0
 
-[node name="Collum4" type="OptionButton" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas4/MarginContainer/VBox/PropertyTable2/VBox/Line1"]
+[node name="Collum4" type="OptionButton" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas4/MarginContainer/VBox/PropertyTable2/VBox/Line1"]
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
@@ -866,24 +909,24 @@ item_count = 1
 popup/item_0/text = "Ver lista"
 popup/item_0/id = 0
 
-[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas4/MarginContainer/VBox/PropertyTable2/VBox/Line1"]
+[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas4/MarginContainer/VBox/PropertyTable2/VBox/Line1"]
 layout_mode = 2
 
-[node name="HS1" type="HSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas4/MarginContainer/VBox/PropertyTable2/VBox"]
+[node name="HS1" type="HSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas4/MarginContainer/VBox/PropertyTable2/VBox"]
 layout_mode = 2
 
-[node name="Tabelas5" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer"]
+[node name="Tabelas5" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox"]
 layout_mode = 2
 theme_type_variation = &"SolidPanelContainer"
 
-[node name="MarginContainer" type="MarginContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas5"]
+[node name="MarginContainer" type="MarginContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas5"]
 layout_mode = 2
 theme_override_constants/margin_top = 0
 
-[node name="VBox" type="VBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas5/MarginContainer"]
+[node name="VBox" type="VBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas5/MarginContainer"]
 layout_mode = 2
 
-[node name="Title" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas5/MarginContainer/VBox"]
+[node name="Title" type="Label" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas5/MarginContainer/VBox"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_vertical = 0
@@ -892,33 +935,33 @@ label_settings = SubResource("LabelSettings_1648y")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PropertyTable1" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas5/MarginContainer/VBox"]
+[node name="PropertyTable1" type="PanelContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas5/MarginContainer/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = ExtResource("8_jsv1v")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas5/MarginContainer/VBox/PropertyTable1"]
+[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas5/MarginContainer/VBox/PropertyTable1"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Line1" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas5/MarginContainer/VBox/PropertyTable1/VBoxContainer"]
+[node name="Line1" type="HBoxContainer" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas5/MarginContainer/VBox/PropertyTable1/VBoxContainer"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
-[node name="VS1" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas5/MarginContainer/VBox/PropertyTable1/VBoxContainer/Line1"]
+[node name="VS1" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas5/MarginContainer/VBox/PropertyTable1/VBoxContainer/Line1"]
 layout_mode = 2
 
-[node name="TextEdit" type="TextEdit" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas5/MarginContainer/VBox/PropertyTable1/VBoxContainer/Line1"]
+[node name="TextEdit" type="TextEdit" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas5/MarginContainer/VBox/PropertyTable1/VBoxContainer/Line1"]
 custom_minimum_size = Vector2(0, 160)
 layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 wrap_mode = 1
 
-[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas5/MarginContainer/VBox/PropertyTable1/VBoxContainer/Line1"]
+[node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas5/MarginContainer/VBox/PropertyTable1/VBoxContainer/Line1"]
 layout_mode = 2
 
-[node name="HS1" type="HSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBoxContainer/Tabelas5/MarginContainer/VBox/PropertyTable1/VBoxContainer"]
+[node name="HS1" type="HSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox/ScrollContainer/VBox/Tabelas5/MarginContainer/VBox/PropertyTable1/VBoxContainer"]
 layout_mode = 2
 
 [node name="HS2" type="HSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ClientEditContainer/TabContainer/Client Name | CNPJ/VBox"]

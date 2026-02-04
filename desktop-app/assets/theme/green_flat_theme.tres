@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=25 format=3 uid="uid://cwqm4buus4nki"]
+[gd_resource type="Theme" load_steps=26 format=3 uid="uid://cwqm4buus4nki"]
 
 [ext_resource type="Texture2D" uid="uid://ru4ba7mpl52v" path="res://assets/icons/feather_white/check-square.svg" id="1_n4ghn"]
 [ext_resource type="FontFile" uid="uid://dplf8yv3b52ft" path="res://assets/fonts/Poppins/Poppins-Bold.ttf" id="1_w63fu"]
@@ -117,6 +117,8 @@ shadow_color = Color(0, 0, 0, 0.39215687)
 shadow_offset = Vector2(0, 6)
 anti_aliasing = false
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_47auh"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ki6qj"]
 content_margin_left = 4.0
 content_margin_top = 4.0
@@ -199,6 +201,7 @@ TabContainer/styles/tab_hovered = SubResource("StyleBoxFlat_v7pke")
 TabContainer/styles/tab_selected = SubResource("StyleBoxFlat_47auh")
 TabContainer/styles/tab_unselected = SubResource("StyleBoxFlat_w2omp")
 TabContainer/styles/tabbar_background = SubResource("StyleBoxFlat_3fs13")
+TextEdit/styles/focus = SubResource("StyleBoxEmpty_47auh")
 TextEdit/styles/normal = SubResource("StyleBoxFlat_ki6qj")
 TooltipPanel/styles/panel = ExtResource("5_w63fu")
 VSeparator/constants/separation = 10

@@ -70,3 +70,16 @@ size_flags_vertical = 3
 texture = ExtResource("2_422ur")
 expand_mode = 2
 stretch_mode = 3
+
+[node name="Label" type="Label" parent="UILayer"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -18.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Stattus Pietra -v a0.1 by Abbajur"

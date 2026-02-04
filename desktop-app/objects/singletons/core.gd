@@ -14,4 +14,3 @@ func change_scene_from_string(scene_name: String = "MainMenu"):
 	var new_scene_path = pages_scene_paths[scene_name]
 	if get_tree().current_scene.scene_file_path != new_scene_path:
 		get_tree().change_scene_to_packed(load(new_scene_path) as PackedScene)
-		print("Scene changed to: ", scene_name)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bn8ernl0gmjg7"]
+[gd_scene load_steps=10 format=3 uid="uid://bn8ernl0gmjg7"]
 
 [ext_resource type="Script" uid="uid://bgp4plwrl7rl3" path="res://objects/widgets/side_bar/side_bar.gd" id="1_0fe5s"]
 [ext_resource type="Script" uid="uid://gcc477bovc31" path="res://objects/widgets/side_bar/side_bar_button.gd" id="2_3vdbf"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://cq740g0c1v8e2" path="res://assets/icons/feather_white/tag.svg" id="4_ltyba"]
 [ext_resource type="Texture2D" uid="uid://ce1k6dmkmpuk3" path="res://assets/icons/feather_white/package.svg" id="5_gl8uf"]
 [ext_resource type="Texture2D" uid="uid://cctih0qxtd313" path="res://assets/icons/feather_white/users.svg" id="6_cyf2b"]
+[ext_resource type="Texture2D" uid="uid://d4jpj0sda0kls" path="res://assets/icons/feather_white/octagon.svg" id="7_2f05j"]
+[ext_resource type="Texture2D" uid="uid://drvhhbr7dvevi" path="res://assets/icons/feather_white/truck.svg" id="8_4q8ns"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3vdbf"]
 
@@ -167,6 +169,72 @@ stretch_mode = 3
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Clientes"
+label_settings = SubResource("LabelSettings_3vdbf")
+horizontal_alignment = 1
+
+[node name="Obras" type="Button" parent="ButtonList/ScrollContainer/VBoxButtonList"]
+modulate = Color(1, 1, 1, 0.5882353)
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+flat = true
+icon_alignment = 1
+script = ExtResource("2_3vdbf")
+destiny_scene_name = "SitesMenu"
+metadata/_custom_type_script = "uid://gcc477bovc31"
+
+[node name="HBox" type="HBoxContainer" parent="ButtonList/ScrollContainer/VBoxButtonList/Obras"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="ButtonList/ScrollContainer/VBoxButtonList/Obras/HBox"]
+layout_mode = 2
+texture = ExtResource("7_2f05j")
+expand_mode = 3
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="ButtonList/ScrollContainer/VBoxButtonList/Obras/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Obras"
+label_settings = SubResource("LabelSettings_3vdbf")
+horizontal_alignment = 1
+
+[node name="Parceiros" type="Button" parent="ButtonList/ScrollContainer/VBoxButtonList"]
+modulate = Color(1, 1, 1, 0.5882353)
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+flat = true
+icon_alignment = 1
+script = ExtResource("2_3vdbf")
+destiny_scene_name = "PartnersMenu"
+metadata/_custom_type_script = "uid://gcc477bovc31"
+
+[node name="HBox" type="HBoxContainer" parent="ButtonList/ScrollContainer/VBoxButtonList/Parceiros"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="ButtonList/ScrollContainer/VBoxButtonList/Parceiros/HBox"]
+layout_mode = 2
+texture = ExtResource("8_4q8ns")
+expand_mode = 3
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="ButtonList/ScrollContainer/VBoxButtonList/Parceiros/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Parceiros"
 label_settings = SubResource("LabelSettings_3vdbf")
 horizontal_alignment = 1
 

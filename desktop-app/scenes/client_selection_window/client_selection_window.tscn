@@ -116,7 +116,6 @@ layout_mode = 2
 
 [node name="CheckButton" type="CheckButton" parent="UILayer/HSplitContainer/Controls/PanelContainer/VBoxContainer/SearchOptionTable/MarginContainer/VBox/OptionLine2"]
 layout_mode = 2
-button_pressed = true
 
 [node name="Label" type="Label" parent="UILayer/HSplitContainer/Controls/PanelContainer/VBoxContainer/SearchOptionTable/MarginContainer/VBox/OptionLine2"]
 layout_mode = 2
@@ -128,7 +127,6 @@ layout_mode = 2
 
 [node name="CheckButton" type="CheckButton" parent="UILayer/HSplitContainer/Controls/PanelContainer/VBoxContainer/SearchOptionTable/MarginContainer/VBox/OptionLine3"]
 layout_mode = 2
-button_pressed = true
 
 [node name="Label" type="Label" parent="UILayer/HSplitContainer/Controls/PanelContainer/VBoxContainer/SearchOptionTable/MarginContainer/VBox/OptionLine3"]
 layout_mode = 2
@@ -140,7 +138,6 @@ layout_mode = 2
 
 [node name="CheckButton" type="CheckButton" parent="UILayer/HSplitContainer/Controls/PanelContainer/VBoxContainer/SearchOptionTable/MarginContainer/VBox/OptionLine4"]
 layout_mode = 2
-button_pressed = true
 
 [node name="Label" type="Label" parent="UILayer/HSplitContainer/Controls/PanelContainer/VBoxContainer/SearchOptionTable/MarginContainer/VBox/OptionLine4"]
 layout_mode = 2

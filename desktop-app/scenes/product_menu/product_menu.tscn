@@ -1,11 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://bie8copp1er2h"]
+[gd_scene load_steps=15 format=3 uid="uid://bie8copp1er2h"]
 
 [ext_resource type="Script" uid="uid://dckx20tmi5rgn" path="res://scenes/product_menu/product_menu.gd" id="2_8um57"]
 [ext_resource type="FontFile" uid="uid://dhrpsw2sxvt54" path="res://assets/fonts/GlacialIndifference/GlacialIndifference-Bold.otf" id="3_jm6t7"]
 [ext_resource type="PackedScene" uid="uid://bn20t5o34hvne" path="res://objects/widgets/side_bar/side_bar.tscn" id="3_kxfrq"]
 [ext_resource type="Script" uid="uid://dqvy55j4w21ne" path="res://scenes/product_menu/product_list.gd" id="3_u43yy"]
+[ext_resource type="Script" uid="uid://cyeie1fabb72x" path="res://objects/widgets/form_fields/form_line_edit.gd" id="6_1648y"]
+[ext_resource type="Script" uid="uid://kk58dbd7iqbf" path="res://objects/widgets/form_fields/form_option_button.gd" id="7_1r17f"]
+[ext_resource type="Script" uid="uid://csbypakuuqhne" path="res://objects/widgets/form_fields/form_check_box.gd" id="7_awg16"]
 [ext_resource type="PackedScene" uid="uid://bamhd45a2cc8s" path="res://objects/widgets/product_entry/product_entry.tscn" id="7_u43yy"]
 [ext_resource type="StyleBox" uid="uid://dn3tb00831a12" path="res://assets/theme/StyleBox/dark_transparent.tres" id="8_1r17f"]
+[ext_resource type="Script" uid="uid://duy1se7quceuf" path="res://objects/widgets/form_fields/form_text_edit.gd" id="10_8qg7l"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_kxfrq"]
 font = ExtResource("3_jm6t7")
@@ -180,6 +184,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "Product Name"
 emoji_menu_enabled = false
+script = ExtResource("6_1648y")
+metadata/_custom_type_script = "uid://cyeie1fabb72x"
 
 [node name="VS" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/000000 | Product Name/VBox/MainProperties"]
 layout_mode = 2
@@ -202,6 +208,8 @@ custom_minimum_size = Vector2(120, 35)
 layout_mode = 2
 placeholder_text = "000000"
 emoji_menu_enabled = false
+script = ExtResource("6_1648y")
+metadata/_custom_type_script = "uid://cyeie1fabb72x"
 
 [node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/000000 | Product Name/VBox/MainProperties"]
 layout_mode = 2
@@ -218,6 +226,8 @@ label_settings = SubResource("LabelSettings_1r17f")
 layout_mode = 2
 theme_override_colors/checkbox_checked_color = Color(0.7090821, 0.76594245, 0, 1)
 button_pressed = true
+script = ExtResource("7_awg16")
+metadata/_custom_type_script = "uid://csbypakuuqhne"
 
 [node name="HS1" type="HSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/000000 | Product Name/VBox"]
 layout_mode = 2
@@ -337,6 +347,8 @@ popup/item_2/text = "L"
 popup/item_2/id = 2
 popup/item_3/text = "ml"
 popup/item_3/id = 3
+script = ExtResource("7_1r17f")
+metadata/_custom_type_script = "uid://kk58dbd7iqbf"
 
 [node name="Collum2" type="OptionButton" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/000000 | Product Name/VBox/ScrollContainer/VBoxContainer/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Line1"]
 layout_mode = 2
@@ -350,18 +362,24 @@ popup/item_1/text = "Frasco"
 popup/item_1/id = 1
 popup/item_2/text = "Caixa"
 popup/item_2/id = 2
+script = ExtResource("7_1r17f")
+metadata/_custom_type_script = "uid://kk58dbd7iqbf"
 
 [node name="Collum3" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/000000 | Product Name/VBox/ScrollContainer/VBoxContainer/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Line1"]
 layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "10 Kg"
 alignment = 1
+script = ExtResource("6_1648y")
+metadata/_custom_type_script = "uid://cyeie1fabb72x"
 
 [node name="Collum4" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/000000 | Product Name/VBox/ScrollContainer/VBoxContainer/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Line1"]
 layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "R$18,00"
 alignment = 1
+script = ExtResource("6_1648y")
+metadata/_custom_type_script = "uid://cyeie1fabb72x"
 
 [node name="Collum5" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/000000 | Product Name/VBox/ScrollContainer/VBoxContainer/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Line1"]
 layout_mode = 2
@@ -370,6 +388,8 @@ theme_override_colors/font_uneditable_color = Color(0.5921569, 0.8862745, 0.6313
 placeholder_text = "R$180,00"
 alignment = 1
 editable = false
+script = ExtResource("6_1648y")
+metadata/_custom_type_script = "uid://cyeie1fabb72x"
 
 [node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/000000 | Product Name/VBox/ScrollContainer/VBoxContainer/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Line1"]
 layout_mode = 2
@@ -435,6 +455,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "R$ 0,80"
 alignment = 1
+script = ExtResource("6_1648y")
+metadata/_custom_type_script = "uid://cyeie1fabb72x"
 
 [node name="Collum2" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/000000 | Product Name/VBox/ScrollContainer/VBoxContainer/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Line2"]
 layout_mode = 2
@@ -443,6 +465,8 @@ theme_override_colors/font_uneditable_color = Color(1, 0.5431655, 0.51258636, 0.
 placeholder_text = "R$ 8,00"
 alignment = 1
 editable = false
+script = ExtResource("6_1648y")
+metadata/_custom_type_script = "uid://cyeie1fabb72x"
 
 [node name="Collum3" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/000000 | Product Name/VBox/ScrollContainer/VBoxContainer/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Line2"]
 layout_mode = 2
@@ -451,6 +475,8 @@ theme_override_colors/font_uneditable_color = Color(0.5921569, 0.8862745, 0.6313
 placeholder_text = "R$ 10,00"
 alignment = 1
 editable = false
+script = ExtResource("6_1648y")
+metadata/_custom_type_script = "uid://cyeie1fabb72x"
 
 [node name="Collum4" type="LineEdit" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/000000 | Product Name/VBox/ScrollContainer/VBoxContainer/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Line2"]
 layout_mode = 2
@@ -459,6 +485,8 @@ theme_override_colors/font_uneditable_color = Color(0.5921569, 0.8862745, 0.6313
 placeholder_text = "40 %"
 alignment = 1
 editable = false
+script = ExtResource("6_1648y")
+metadata/_custom_type_script = "uid://cyeie1fabb72x"
 
 [node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/000000 | Product Name/VBox/ScrollContainer/VBoxContainer/Tabelas1/MarginContainer/VBox/PropertyTable1/VBox/Line2"]
 layout_mode = 2
@@ -648,6 +676,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 wrap_mode = 1
+script = ExtResource("10_8qg7l")
+metadata/_custom_type_script = "uid://duy1se7quceuf"
 
 [node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/000000 | Product Name/VBox/ScrollContainer/VBoxContainer/Tabelas3/MarginContainer/VBox/PropertyTable1/VBoxContainer/Line1"]
 layout_mode = 2
@@ -697,6 +727,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 wrap_mode = 1
+script = ExtResource("10_8qg7l")
+metadata/_custom_type_script = "uid://duy1se7quceuf"
 
 [node name="VS2" type="VSeparator" parent="UILayer/HBoxContainer/HSplitContainer/ProductEditContainer/TabContainer/000000 | Product Name/VBox/ScrollContainer/VBoxContainer/Tabelas4/MarginContainer/VBox/PropertyTable1/VBoxContainer/Line1"]
 layout_mode = 2
